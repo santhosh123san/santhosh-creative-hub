@@ -22,7 +22,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import santhoshProfile from '@/assets/santhosh-profile.jpg';
-import webDevHero from '@/assets/web-development-hero.jpg';
+import santhoshHero from '@/assets/santhosh-hero.jpg';
 import attendanceSoftware from '@/assets/attendance-software.jpg';
 import turfBookingSystem from '@/assets/turf-booking-system.jpg';
 
@@ -270,8 +270,8 @@ const Portfolio = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
                 <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-2 shadow-elegant">
                   <img 
-                    src={webDevHero} 
-                    alt="Web Development Workspace" 
+                    src={santhoshHero} 
+                    alt="Santhosh T - Full Stack Developer" 
                     className="rounded-2xl w-full h-auto animate-float shadow-2xl"
                   />
                   
