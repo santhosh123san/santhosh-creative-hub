@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import santhoshProfile from '@/assets/santhosh-profile.jpg';
 import santhoshHero from '@/assets/santhosh-hero.jpg';
+import santhoshAbout from '@/assets/santhosh-about.jpg';
 import attendanceSoftware from '@/assets/attendance-software.jpg';
 import turfBookingSystem from '@/assets/turf-booking-system.jpg';
 
@@ -322,7 +323,7 @@ const Portfolio = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img 
-                src={santhoshProfile} 
+                src={santhoshAbout} 
                 alt="Santhosh T - Full Stack Developer" 
                 className="rounded-2xl shadow-card w-full max-w-md mx-auto"
               />
@@ -351,13 +352,13 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills Overview Section */}
       <section id="skills" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Skills & Expertise</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Skills Overview</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive overview of my technical skills and design capabilities
+              A comprehensive overview of my technical capabilities and expertise levels
             </p>
           </div>
           
@@ -385,7 +386,30 @@ const Portfolio = () => {
                         ></div>
                       </div>
                     </div>
-                    
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* My Skills Section */}
+      <section className="py-20 bg-section-gradient">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">My Skills</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Technologies and tools I work with to create amazing digital experiences
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {skills.map((skill, index) => {
+              return (
+                <Card key={index} className="bg-card-gradient shadow-card hover:shadow-elegant transition-smooth animate-scale-in">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold text-foreground mb-4">{skill.category}</h3>
                     <div className="flex flex-wrap gap-2">
                       {skill.skills.map((tech, techIndex) => (
                         <Badge key={techIndex} variant="secondary" className="bg-accent/50">
@@ -440,13 +464,13 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* My Portfolio Section */}
       <section id="projects" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Featured Projects</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">My Portfolio</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A showcase of my latest work and creative solutions
+              Showcasing my completed projects and professional work
             </p>
           </div>
           
@@ -482,6 +506,72 @@ const Portfolio = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* My Projects Section */}
+      <section className="py-20 bg-section-gradient">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">My Projects</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Current and future projects in web development, design, and software solutions
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <Card key={index} className="bg-card shadow-card hover:shadow-elegant transition-smooth group animate-scale-in overflow-hidden">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-smooth"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <Badge className="bg-primary text-primary-foreground">
+                      {project.category}
+                    </Badge>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">{project.title}</h3>
+                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech, techIndex) => (
+                      <Badge key={techIndex} variant="secondary" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  <Button variant="outline" size="sm" className="group w-full">
+                    View Details
+                    <ExternalLink className="group-hover:translate-x-1 transition-smooth" size={16} />
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+            
+            {/* Future Projects Placeholder */}
+            <Card className="bg-card/50 shadow-card hover:shadow-elegant transition-smooth group animate-scale-in overflow-hidden border-dashed border-2">
+              <CardContent className="p-6 text-center h-full flex flex-col justify-center">
+                <div className="mb-4">
+                  <div className="inline-flex p-4 bg-primary/10 rounded-2xl">
+                    <Code className="text-primary" size={32} />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">More Projects Coming Soon</h3>
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                  Exciting new web development and design projects in development
+                </p>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary" className="text-xs">React</Badge>
+                  <Badge variant="secondary" className="text-xs">Next.js</Badge>
+                  <Badge variant="secondary" className="text-xs">TypeScript</Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
