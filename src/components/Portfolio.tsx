@@ -157,45 +157,160 @@ const Portfolio = () => {
 
       {/* Hero Section */}
       <section id="home" className="pt-16 min-h-screen flex items-center bg-hero-gradient relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-transparent"></div>
+          
+          {/* Floating Geometric Shapes */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl animate-float"></div>
+          <div className="absolute top-40 right-20 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-white/15 rotate-45 blur-lg animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/3 right-10 w-24 h-24 bg-primary/15 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          
+          {/* Grid Pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20"></div>
+        </div>
+
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white animate-fade-up">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-4">
-                Hi, I'm <span className="text-white">Santhosh</span>
-              </h1>
-              <h2 className="text-2xl lg:text-3xl font-light mb-6 text-white/90">
-                Full Stack Developer & Designer
-              </h2>
-              <p className="text-lg lg:text-xl mb-8 text-white/80 leading-relaxed">
-                Crafting responsive websites & impactful designs with passion and precision.
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+            <div className="text-white space-y-8 animate-fade-up">
+              {/* Status Badge */}
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 text-sm">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                Available for Freelance Work
+              </div>
+
+              {/* Main Heading */}
+              <div className="space-y-4">
+                <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight">
+                  Hi, I'm{' '}
+                  <span className="bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent relative">
+                    Santhosh
+                    <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-white/80 to-transparent rounded-full"></div>
+                  </span>
+                </h1>
+                <div className="relative">
+                  <h2 className="text-2xl lg:text-4xl font-medium text-white/90 leading-relaxed">
+                    Full Stack Developer &{' '}
+                    <span className="relative inline-block">
+                      <span className="bg-gradient-to-r from-yellow-200 to-orange-200 bg-clip-text text-transparent font-semibold">
+                        Creative Designer
+                      </span>
+                    </span>
+                  </h2>
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-xl lg:text-2xl text-white/80 leading-relaxed font-light max-w-xl">
+                Crafting digital experiences that blend{' '}
+                <span className="text-white font-medium">cutting-edge technology</span> with{' '}
+                <span className="text-white font-medium">stunning visual design</span>.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+
+              {/* Tech Stack Pills */}
+              <div className="flex flex-wrap gap-3">
+                {['React', 'Node.js', 'Python', 'MongoDB', 'UI/UX'].map((tech) => (
+                  <div key={tech} className="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white/90 text-sm font-medium hover:bg-white/20 transition-smooth cursor-pointer">
+                    {tech}
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button 
                   variant="glass" 
-                  size="lg" 
+                  size="xl" 
                   onClick={() => scrollToSection('projects')}
-                  className="group"
+                  className="group bg-white/15 hover:bg-white/25 border-white/30 shadow-glow"
                 >
-                  View My Work
-                  <ChevronRight className="group-hover:translate-x-1 transition-smooth" size={18} />
+                  <span>Explore My Work</span>
+                  <ChevronRight className="group-hover:translate-x-1 transition-smooth" size={20} />
                 </Button>
                 <Button 
                   variant="outline" 
-                  size="lg" 
+                  size="xl" 
                   onClick={() => scrollToSection('contact')}
-                  className="border-white/30 text-white hover:bg-white hover:text-primary"
+                  className="border-white/40 text-white hover:bg-white hover:text-primary backdrop-blur-sm"
                 >
-                  Let's Connect
+                  <Mail size={18} />
+                  Get In Touch
                 </Button>
               </div>
+
+              {/* Social Proof */}
+              <div className="flex items-center gap-6 pt-8 border-t border-white/20">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">8.54</div>
+                  <div className="text-xs text-white/70">CGPA</div>
+                </div>
+                <div className="w-px h-8 bg-white/20"></div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">50+</div>
+                  <div className="text-xs text-white/70">Projects</div>
+                </div>
+                <div className="w-px h-8 bg-white/20"></div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">3+</div>
+                  <div className="text-xs text-white/70">Years Experience</div>
+                </div>
+              </div>
             </div>
-            <div className="relative animate-scale-in">
-              <img 
-                src={webDevHero} 
-                alt="Web Development Workspace" 
-                className="rounded-2xl shadow-elegant animate-float"
-              />
+
+            {/* Hero Image with Modern Effects */}
+            <div className="relative animate-scale-in lg:justify-self-end">
+              {/* Decorative Elements */}
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-white/20 to-transparent rounded-3xl rotate-12 blur-xl"></div>
+              <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-tl from-primary/30 to-transparent rounded-2xl -rotate-12 blur-lg"></div>
+              
+              {/* Main Image Container */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-2 shadow-elegant">
+                  <img 
+                    src={webDevHero} 
+                    alt="Web Development Workspace" 
+                    className="rounded-2xl w-full h-auto animate-float shadow-2xl"
+                  />
+                  
+                  {/* Floating Info Cards */}
+                  <div className="absolute -top-4 -left-4 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-card animate-float" style={{ animationDelay: '1s' }}>
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <div className="text-sm font-medium text-gray-800">Currently Available</div>
+                    </div>
+                  </div>
+                  
+                  <div className="absolute -bottom-4 -right-4 bg-primary/90 backdrop-blur-md rounded-2xl p-4 shadow-card animate-float" style={{ animationDelay: '2s' }}>
+                    <div className="flex items-center gap-2 text-white">
+                      <Code size={16} />
+                      <div className="text-sm font-medium">Full Stack Dev</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Orbiting Elements */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 pointer-events-none">
+                <div className="absolute inset-0 border border-white/10 rounded-full animate-spin" style={{ animationDuration: '20s' }}>
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white/30 rounded-full"></div>
+                </div>
+                <div className="absolute inset-4 border border-white/5 rounded-full animate-spin" style={{ animationDuration: '30s', animationDirection: 'reverse' }}>
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-primary/40 rounded-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
+          <div className="flex flex-col items-center gap-2">
+            <div className="text-xs uppercase tracking-wider">Scroll Down</div>
+            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
             </div>
           </div>
         </div>

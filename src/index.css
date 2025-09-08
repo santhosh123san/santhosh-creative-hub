@@ -175,6 +175,18 @@ All colors MUST be HSL.
   .animate-scale-in {
     animation: scaleIn 0.4s ease-out forwards;
   }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  .animate-orbit {
+    animation: orbit 20s linear infinite;
+  }
 }
 
 /* Custom keyframes */
@@ -202,5 +214,34 @@ All colors MUST be HSL.
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(33, 150, 243, 0.6), 0 0 60px rgba(33, 150, 243, 0.4);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
   }
 }
