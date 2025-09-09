@@ -26,8 +26,9 @@ import {
 import santhoshProfile from '@/assets/santhosh-profile.jpg';
 import santhoshHero from '@/assets/santhosh-hero.jpg';
 import santhoshAbout from '@/assets/santhosh-about.jpg';
-import attendanceSoftware from '@/assets/attendance-software.jpg';
-import turfBookingSystem from '@/assets/turf-booking-system.jpg';
+import attendanceSoftware from '@/assets/attendance-monitoring-new.jpg';
+import turfBookingSystem from '@/assets/turf-booking-new.jpg';
+import posterDesigns from '@/assets/poster-designs-new.jpg';
 
 const Portfolio = () => {
   const { toast } = useToast();
@@ -86,6 +87,7 @@ const Portfolio = () => {
       setIsSubmitting(false);
     }
   };
+  const [showAllProjects, setShowAllProjects] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const skills = [
@@ -145,24 +147,38 @@ const Portfolio = () => {
   const projects = [
     {
       title: 'Attendance Monitoring Software',
-      description: 'Python + SQLite + Tkinter – Built to track and report student attendance effectively. Used for data analysis and educational institution reporting.',
+      description: 'Python-based attendance tracking system with data analysis and reporting.',
       image: attendanceSoftware,
-      tech: ['Python', 'SQLite', 'Tkinter', 'Data Analysis'],
+      tech: ['Python', 'SQLite', 'Tkinter'],
       category: 'Software Development'
     },
     {
-      title: 'Turf Booking System Website',
-      description: 'Responsive web app to manage bookings and user flow for sports turf reservations.',
+      title: 'Turf Booking System',
+      description: 'Responsive web app for sports turf reservations and booking management.',
       image: turfBookingSystem,
-      tech: ['React', 'Node.js', 'MongoDB', 'Express'],
+      tech: ['React', 'Node.js', 'MongoDB'],
       category: 'Web Development'
     },
     {
       title: 'Poster Design Showcase',
-      description: 'Gallery of posters created for college and local community events.',
-      image: santhoshProfile, // Placeholder - can be updated with actual poster gallery
-      tech: ['Photoshop', 'Illustrator', 'Canva', 'Design'],
+      description: 'Creative poster gallery for college and community events.',
+      image: posterDesigns,
+      tech: ['Photoshop', 'Illustrator', 'Canva'],
       category: 'Graphic Design'
+    },
+    {
+      title: 'E-commerce Platform',
+      description: 'Full-stack online shopping platform with payment integration.',
+      image: santhoshProfile,
+      tech: ['React', 'Express', 'PostgreSQL'],
+      category: 'Web Development'
+    },
+    {
+      title: 'Mobile App Design',
+      description: 'UI/UX design for fitness tracking mobile application.',
+      image: santhoshProfile,
+      tech: ['Figma', 'UI Design', 'Prototyping'],
+      category: 'UI/UX Design'
     }
   ];
 
@@ -483,37 +499,37 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-section-gradient">
+      {/* Services Section - Compact */}
+      <section id="services" className="py-12 bg-section-gradient">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">My Services</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-3">My Services</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
               Comprehensive solutions for your digital needs
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
                 <Card key={index} className="bg-card hover:shadow-elegant transition-smooth group animate-scale-in">
-                  <CardContent className="p-6 text-center">
-                    <div className="mb-6">
-                      <div className="inline-flex p-4 bg-hero-gradient rounded-2xl shadow-glow group-hover:scale-110 transition-bounce">
-                        <IconComponent className="text-white" size={32} />
+                  <CardContent className="p-4 text-center">
+                    <div className="mb-4">
+                      <div className="inline-flex p-3 bg-hero-gradient rounded-2xl shadow-glow group-hover:scale-110 transition-bounce">
+                        <IconComponent className="text-white" size={24} />
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
-                    <p className="text-muted-foreground mb-4">{service.description}</p>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
+                    <p className="text-muted-foreground mb-3 text-sm line-clamp-2">{service.description}</p>
+                    <div className="text-xs text-muted-foreground space-y-1">
+                      {service.features.slice(0, 2).map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center justify-center gap-1">
+                          <div className="w-1 h-1 bg-primary rounded-full"></div>
                           {feature}
-                        </li>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </CardContent>
                 </Card>
               );
@@ -522,115 +538,67 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* My Portfolio Section */}
-      <section id="projects" className="py-20 bg-background">
+      {/* Portfolio Section - Consolidated */}
+      <section id="projects" className="py-12 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">My Portfolio</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-3">My Portfolio</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
               Showcasing my completed projects and professional work
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {(showAllProjects ? projects : projects.slice(0, 3)).map((project, index) => (
               <Card key={index} className="bg-card shadow-card hover:shadow-elegant transition-smooth group animate-scale-in overflow-hidden">
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-smooth"
+                    className="w-full h-32 object-cover group-hover:scale-105 transition-smooth"
                   />
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-primary text-primary-foreground">
+                  <div className="absolute top-2 right-2">
+                    <Badge className="bg-primary text-primary-foreground text-xs">
                       {project.category}
                     </Badge>
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="text-xs">
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{project.title}</h3>
+                  <p className="text-muted-foreground mb-3 text-sm leading-relaxed line-clamp-2">{project.description}</p>
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {project.tech.slice(0, 3).map((tech, techIndex) => (
+                      <Badge key={techIndex} variant="secondary" className="text-xs px-2 py-1">
                         {tech}
                       </Badge>
                     ))}
+                    {project.tech.length > 3 && (
+                      <Badge variant="secondary" className="text-xs px-2 py-1">
+                        +{project.tech.length - 3}
+                      </Badge>
+                    )}
                   </div>
-                  <Button variant="outline" size="sm" className="group w-full">
+                  <Button variant="outline" size="sm" className="w-full text-xs">
                     View Details
-                    <ExternalLink className="group-hover:translate-x-1 transition-smooth" size={16} />
+                    <ExternalLink className="ml-2" size={14} />
                   </Button>
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* My Projects Section */}
-      <section className="py-20 bg-section-gradient">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">My Projects</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Current and future projects in web development, design, and software solutions
-            </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="bg-card shadow-card hover:shadow-elegant transition-smooth group animate-scale-in overflow-hidden">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-smooth"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-primary text-primary-foreground">
-                      {project.category}
-                    </Badge>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Button variant="outline" size="sm" className="group w-full">
-                    View Details
-                    <ExternalLink className="group-hover:translate-x-1 transition-smooth" size={16} />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-            
-            {/* Future Projects Placeholder */}
-            <Card className="bg-card/50 shadow-card hover:shadow-elegant transition-smooth group animate-scale-in overflow-hidden border-dashed border-2">
-              <CardContent className="p-6 text-center h-full flex flex-col justify-center">
-                <div className="mb-4">
-                  <div className="inline-flex p-4 bg-primary/10 rounded-2xl">
-                    <Code className="text-primary" size={32} />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">More Projects Coming Soon</h3>
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                  Exciting new web development and design projects in development
-                </p>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="secondary" className="text-xs">React</Badge>
-                  <Badge variant="secondary" className="text-xs">Next.js</Badge>
-                  <Badge variant="secondary" className="text-xs">TypeScript</Badge>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          {projects.length > 3 && (
+            <div className="text-center mt-8">
+              <Button 
+                variant="outline" 
+                onClick={() => setShowAllProjects(!showAllProjects)}
+                className="px-6"
+              >
+                {showAllProjects ? 'Show Less' : `View All Projects (${projects.length})`}
+                <ChevronRight className={`ml-2 transition-transform ${showAllProjects ? 'rotate-90' : ''}`} size={16} />
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
