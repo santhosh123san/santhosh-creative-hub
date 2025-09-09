@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
 import { 
   Code, 
   Palette, 
@@ -28,6 +30,62 @@ import attendanceSoftware from '@/assets/attendance-software.jpg';
 import turfBookingSystem from '@/assets/turf-booking-system.jpg';
 
 const Portfolio = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Error",
+        description: "Please fill in all fields",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        'service_jlko9n6',
+        'template_8z1dyke',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Santhosh'
+        },
+        'Bh7fa55ZgOSbL3FnB'
+      );
+
+      toast({
+        title: "Success!",
+        description: "Message sent successfully! I'll get back to you soon.",
+      });
+
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const skills = [
@@ -647,7 +705,7 @@ const Portfolio = () => {
                     <Linkedin className="group-hover:scale-110 transition-smooth" size={24} />
                   </a>
                   <a 
-                    href="https://www.instagram.com/__santhosh.xzx___?igsh=b2l2MmQ2Ymk5cG1x" 
+                    href="https://www.instagram.com/__santhosh.xzx___" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="p-3 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-white/20 transition-smooth group"
@@ -661,29 +719,47 @@ const Portfolio = () => {
             {/* Contact Form */}
             <Card className="bg-white/10 backdrop-blur-md border-white/20 animate-scale-in">
               <CardContent className="p-6">
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Input 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
                       placeholder="Your Name" 
                       className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                      required
                     />
                   </div>
                   <div>
                     <Input 
                       type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       placeholder="Your Email" 
                       className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                      required
                     />
                   </div>
                   <div>
                     <Textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       placeholder="Your Message" 
                       rows={5}
                       className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                      required
                     />
                   </div>
-                  <Button variant="glass" size="lg" className="w-full group">
-                    Send Message
+                  <Button 
+                    type="submit" 
+                    variant="glass" 
+                    size="lg" 
+                    className="w-full group"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                     <ChevronRight className="group-hover:translate-x-1 transition-smooth" size={18} />
                   </Button>
                 </form>
