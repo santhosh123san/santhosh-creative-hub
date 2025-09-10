@@ -545,6 +545,55 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Process Section */}
+      <section className="py-16 bg-section-gradient">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              My <span className="text-primary">Process</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              How I bring your ideas to life
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Discovery",
+                description: "Understanding your requirements and goals"
+              },
+              {
+                step: "02", 
+                title: "Planning",
+                description: "Creating detailed project roadmap and timeline"
+              },
+              {
+                step: "03",
+                title: "Development", 
+                description: "Building your solution with best practices"
+              },
+              {
+                step: "04",
+                title: "Delivery",
+                description: "Testing, optimization, and final delivery"
+              }
+            ].map((process, index) => (
+              <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="mb-6">
+                  <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto shadow-glow">
+                    <span className="text-white font-bold text-xl">{process.step}</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">{process.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{process.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section - Consolidated */}
       <section id="projects" className="py-12 bg-background">
         <div className="container mx-auto px-4">
