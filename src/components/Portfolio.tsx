@@ -421,12 +421,7 @@ const Portfolio = () => {
                 size="lg" 
                 className="group"
                 onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/santhosh-resume.jpg';
-                  link.download = 'Santhosh_Resume.jpg';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
+                  window.open('/santhosh-resume.jpg', '_blank');
                 }}
               >
                 <Download size={18} />
