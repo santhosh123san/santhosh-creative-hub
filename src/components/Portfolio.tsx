@@ -659,6 +659,344 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Detailed Projects Showcase */}
+      <section className="py-20 bg-gradient-to-br from-background via-background to-primary/5 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-24 h-24 bg-secondary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Featured Projects</Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Detailed Project 
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Showcase</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Dive deep into my most impactful projects, exploring the technologies, features, and solutions that drive real-world results.
+            </p>
+          </div>
+
+          <div className="space-y-24">
+            {/* Attendance Monitoring Software */}
+            <div className="group">
+              <Card className="bg-gradient-to-br from-card to-card/50 shadow-elegant hover:shadow-2xl transition-all duration-500 overflow-hidden border-0">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  {/* Project Image */}
+                  <div className="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 p-8 flex items-center justify-center min-h-[400px]">
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px] opacity-30"></div>
+                    
+                    {/* Mock Dashboard Interface */}
+                    <div className="relative w-full max-w-lg">
+                      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-2xl">
+                        {/* Header */}
+                        <div className="flex items-center justify-between mb-6">
+                          <h3 className="text-white text-lg font-semibold">Attendance Dashboard</h3>
+                          <div className="flex gap-2">
+                            <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                            <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                            <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                          </div>
+                        </div>
+
+                        {/* Stats Cards */}
+                        <div className="grid grid-cols-2 gap-4 mb-6">
+                          <div className="bg-white/10 rounded-lg p-4 border border-white/20">
+                            <div className="text-2xl font-bold text-white">94.7%</div>
+                            <div className="text-xs text-white/70">Overall Attendance</div>
+                          </div>
+                          <div className="bg-white/10 rounded-lg p-4 border border-white/20">
+                            <div className="text-2xl font-bold text-white">1,247</div>
+                            <div className="text-xs text-white/70">Active Students</div>
+                          </div>
+                        </div>
+
+                        {/* Chart Visualization */}
+                        <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                          <div className="flex items-end gap-2 h-16">
+                            {[60, 80, 45, 95, 70, 85, 90].map((height, index) => (
+                              <div 
+                                key={index}
+                                className="bg-gradient-to-t from-blue-400 to-cyan-300 rounded-sm flex-1 animate-pulse"
+                                style={{ 
+                                  height: `${height}%`,
+                                  animationDelay: `${index * 0.2}s`
+                                }}
+                              ></div>
+                            ))}
+                          </div>
+                          <div className="text-xs text-white/60 mt-2">Weekly Attendance Trends</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute top-8 right-8 bg-white/10 backdrop-blur-md rounded-full p-3 animate-float">
+                      <Database className="text-white" size={20} />
+                    </div>
+                    <div className="absolute bottom-8 left-8 bg-white/10 backdrop-blur-md rounded-full p-3 animate-float" style={{ animationDelay: '1s' }}>
+                      <Monitor className="text-white" size={20} />
+                    </div>
+                  </div>
+
+                  {/* Project Details */}
+                  <CardContent className="p-8 lg:p-12 flex flex-col justify-center">
+                    <div className="space-y-6">
+                      <div>
+                        <Badge className="mb-3 bg-violet-100 text-violet-700 border-violet-200">Software Development</Badge>
+                        <h3 className="text-3xl font-bold text-foreground mb-4">Attendance Monitoring Software</h3>
+                        <p className="text-muted-foreground text-lg leading-relaxed">
+                          A comprehensive Python-based attendance tracking system designed for educational institutions. 
+                          Features real-time monitoring, automated report generation, and advanced data analytics to 
+                          streamline attendance management processes.
+                        </p>
+                      </div>
+
+                      {/* Key Features */}
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                          <div className="w-2 h-2 bg-primary rounded-full"></div>
+                          Key Features
+                        </h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {[
+                            'Real-time attendance tracking',
+                            'Automated report generation', 
+                            'Student data management',
+                            'Export functionality (PDF/Excel)',
+                            'Advanced analytics dashboard',
+                            'Multi-class support'
+                          ].map((feature, index) => (
+                            <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                              {feature}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Technologies */}
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Technologies Used</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {['Python', 'SQLite', 'Tkinter', 'Pandas', 'Matplotlib', 'Data Analysis'].map((tech, index) => (
+                            <Badge key={index} variant="secondary" className="bg-muted/50 hover:bg-muted transition-colors">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Impact Metrics */}
+                      <div className="bg-muted/30 rounded-lg p-4 border border-border/50">
+                        <h4 className="font-semibold text-foreground mb-3">Project Impact</h4>
+                        <div className="grid grid-cols-3 gap-4 text-center">
+                          <div>
+                            <div className="text-xl font-bold text-primary">95%</div>
+                            <div className="text-xs text-muted-foreground">Time Saved</div>
+                          </div>
+                          <div>
+                            <div className="text-xl font-bold text-primary">1000+</div>
+                            <div className="text-xs text-muted-foreground">Students Managed</div>
+                          </div>
+                          <div>
+                            <div className="text-xl font-bold text-primary">24/7</div>
+                            <div className="text-xs text-muted-foreground">System Uptime</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Action Buttons */}
+                      <div className="flex gap-3 pt-2">
+                        <Button className="group bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 shadow-lg">
+                          <ExternalLink className="group-hover:scale-110 transition-transform" size={16} />
+                          View Project
+                        </Button>
+                        <Button variant="outline" className="group">
+                          <Github className="group-hover:scale-110 transition-transform" size={16} />
+                          Source Code
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </div>
+              </Card>
+            </div>
+
+            {/* Turf Booking System */}
+            <div className="group">
+              <Card className="bg-gradient-to-bl from-card to-card/50 shadow-elegant hover:shadow-2xl transition-all duration-500 overflow-hidden border-0">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  {/* Project Details - Left Side for Variety */}
+                  <CardContent className="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
+                    <div className="space-y-6">
+                      <div>
+                        <Badge className="mb-3 bg-emerald-100 text-emerald-700 border-emerald-200">Web Development</Badge>
+                        <h3 className="text-3xl font-bold text-foreground mb-4">Turf Booking System</h3>
+                        <p className="text-muted-foreground text-lg leading-relaxed">
+                          A modern, responsive web application for sports turf reservations and booking management. 
+                          Built with the MERN stack, it provides seamless booking experiences, real-time availability 
+                          updates, and comprehensive management tools for facility owners.
+                        </p>
+                      </div>
+
+                      {/* Key Features */}
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                          <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                          Key Features
+                        </h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {[
+                            'Real-time booking system',
+                            'Payment gateway integration',
+                            'User authentication & profiles',
+                            'Booking history & receipts',
+                            'Admin dashboard',
+                            'Mobile-responsive design'
+                          ].map((feature, index) => (
+                            <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
+                              {feature}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Technologies */}
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Technologies Used</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {['React', 'Node.js', 'Express', 'MongoDB', 'JWT Auth', 'Stripe API', 'Tailwind CSS'].map((tech, index) => (
+                            <Badge key={index} variant="secondary" className="bg-muted/50 hover:bg-muted transition-colors">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Impact Metrics */}
+                      <div className="bg-muted/30 rounded-lg p-4 border border-border/50">
+                        <h4 className="font-semibold text-foreground mb-3">Project Impact</h4>
+                        <div className="grid grid-cols-3 gap-4 text-center">
+                          <div>
+                            <div className="text-xl font-bold text-emerald-600">500+</div>
+                            <div className="text-xs text-muted-foreground">Bookings/Month</div>
+                          </div>
+                          <div>
+                            <div className="text-xl font-bold text-emerald-600">98%</div>
+                            <div className="text-xs text-muted-foreground">User Satisfaction</div>
+                          </div>
+                          <div>
+                            <div className="text-xl font-bold text-emerald-600">24/7</div>
+                            <div className="text-xs text-muted-foreground">Online Availability</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Action Buttons */}
+                      <div className="flex gap-3 pt-2">
+                        <Button className="group bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 shadow-lg">
+                          <ExternalLink className="group-hover:scale-110 transition-transform" size={16} />
+                          View Project
+                        </Button>
+                        <Button variant="outline" className="group">
+                          <Github className="group-hover:scale-110 transition-transform" size={16} />
+                          Source Code
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+
+                  {/* Project Visualization - Right Side */}
+                  <div className="relative overflow-hidden bg-gradient-to-br from-emerald-600 via-teal-600 to-green-700 p-8 flex items-center justify-center min-h-[400px] order-1 lg:order-2">
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px] opacity-30"></div>
+                    
+                    {/* Mock Booking Interface */}
+                    <div className="relative w-full max-w-lg">
+                      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-2xl">
+                        {/* Header */}
+                        <div className="flex items-center justify-between mb-6">
+                          <h3 className="text-white text-lg font-semibold">Turf Booking</h3>
+                          <div className="bg-green-400 text-green-900 px-3 py-1 rounded-full text-xs font-medium">
+                            Available
+                          </div>
+                        </div>
+
+                        {/* Booking Slots */}
+                        <div className="space-y-3 mb-6">
+                          {[
+                            { time: '06:00 - 07:00', status: 'available', price: '₹500' },
+                            { time: '07:00 - 08:00', status: 'booked', price: '₹500' },
+                            { time: '08:00 - 09:00', status: 'available', price: '₹600' },
+                            { time: '09:00 - 10:00', status: 'available', price: '₹600' }
+                          ].map((slot, index) => (
+                            <div key={index} className={`flex items-center justify-between p-3 rounded-lg border ${
+                              slot.status === 'available' 
+                                ? 'bg-white/10 border-white/20 text-white' 
+                                : 'bg-red-500/20 border-red-400/30 text-red-200'
+                            }`}>
+                              <span className="text-sm font-medium">{slot.time}</span>
+                              <div className="flex items-center gap-2">
+                                <span className="text-sm">{slot.price}</span>
+                                <div className={`w-2 h-2 rounded-full ${
+                                  slot.status === 'available' ? 'bg-green-400' : 'bg-red-400'
+                                }`}></div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Quick Stats */}
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="bg-white/10 rounded-lg p-3 border border-white/20 text-center">
+                            <div className="text-lg font-bold text-white">12</div>
+                            <div className="text-xs text-white/70">Available Slots</div>
+                          </div>
+                          <div className="bg-white/10 rounded-lg p-3 border border-white/20 text-center">
+                            <div className="text-lg font-bold text-white">₹7,200</div>
+                            <div className="text-xs text-white/70">Today's Revenue</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute top-8 left-8 bg-white/10 backdrop-blur-md rounded-full p-3 animate-float">
+                      <Code className="text-white" size={20} />
+                    </div>
+                    <div className="absolute bottom-8 right-8 bg-white/10 backdrop-blur-md rounded-full p-3 animate-float" style={{ animationDelay: '1s' }}>
+                      <Monitor className="text-white" size={20} />
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 border border-border/50">
+              <h3 className="text-2xl font-bold text-foreground mb-4">Interested in Similar Solutions?</h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Let's discuss how I can help you build custom software solutions tailored to your specific needs and requirements.
+              </p>
+              <Button 
+                size="lg" 
+                onClick={() => scrollToSection('contact')}
+                className="group bg-gradient-to-r from-primary to-secondary hover:shadow-lg"
+              >
+                Start Your Project
+                <ChevronRight className="group-hover:translate-x-1 transition-smooth" size={18} />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-hero-gradient relative">
         <div className="absolute inset-0 bg-black/20"></div>
