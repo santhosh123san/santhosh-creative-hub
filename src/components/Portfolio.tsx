@@ -421,7 +421,21 @@ const Portfolio = () => {
                 size="lg" 
                 className="group"
                 onClick={() => {
-                  window.open('/santhosh-resume.jpg', '_blank');
+                  // Create a temporary link to download the resume
+                  const link = document.createElement('a');
+                  link.href = '/lovable-uploads/c427d0d6-8bcf-49ec-afeb-7ce939142261.png';
+                  link.download = 'Santhosh_Resume.png';
+                  link.target = '_blank';
+                  
+                  // First open in new tab for preview
+                  window.open('/lovable-uploads/c427d0d6-8bcf-49ec-afeb-7ce939142261.png', '_blank');
+                  
+                  // Then trigger download after a short delay
+                  setTimeout(() => {
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }, 1000);
                 }}
               >
                 <Download size={18} />
