@@ -416,7 +416,19 @@ const Portfolio = () => {
                   Currently pursuing B.Tech in Information Technology at Mahendra Institute of Technology (3rd year) with a CGPA of 8.54.
                 </p>
               </div>
-              <Button variant="cta" size="lg" className="group">
+              <Button 
+                variant="cta" 
+                size="lg" 
+                className="group"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/santhosh-resume.jpg';
+                  link.download = 'Santhosh_Resume.jpg';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+              >
                 <Download size={18} />
                 Download Resume
                 <ChevronRight className="group-hover:translate-x-1 transition-smooth" size={18} />
