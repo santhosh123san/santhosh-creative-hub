@@ -1068,7 +1068,7 @@ const Portfolio = () => {
                     <Linkedin className="group-hover:scale-110 transition-smooth" size={24} />
                   </a>
                   <a 
-                    href="https://www.instagram.com/__santhosh.xzx___" 
+                    href="https://www.instagram.com/__santhosh.xzx___?igsh=OHFhYWZwMnR2Z3Zz" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="p-3 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-white/20 transition-smooth group"
