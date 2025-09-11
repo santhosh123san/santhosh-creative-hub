@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
 import { 
   Code, 
@@ -38,6 +39,7 @@ const Portfolio = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showInstagramQR, setShowInstagramQR] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -1067,14 +1069,12 @@ const Portfolio = () => {
                   >
                     <Linkedin className="group-hover:scale-110 transition-smooth" size={24} />
                   </a>
-                  <a 
-                    href="https://www.instagram.com/__santhosh.xzx___?igsh=OHFhYWZwMnR2Z3Zz" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  <button 
+                    onClick={() => setShowInstagramQR(true)}
                     className="p-3 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-white/20 transition-smooth group"
                   >
                     <Instagram className="group-hover:scale-110 transition-smooth" size={24} />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1145,6 +1145,49 @@ const Portfolio = () => {
           </div>
         </div>
       </footer>
+
+      {/* Instagram QR Code Modal */}
+      <Dialog open={showInstagramQR} onOpenChange={setShowInstagramQR}>
+        <DialogContent className="sm:max-w-md bg-white/95 backdrop-blur-md border border-primary/20">
+          <DialogHeader>
+            <DialogTitle className="text-center text-primary font-bold">
+              Follow me on Instagram
+            </DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col items-center space-y-4 p-4">
+            <div className="bg-white p-4 rounded-2xl shadow-elegant">
+              <img 
+                src="/lovable-uploads/31378304-01a2-4b76-be9c-b5cda758605e.png" 
+                alt="Instagram QR Code for @__santhosh.xzx___" 
+                className="w-64 h-64 object-contain"
+              />
+            </div>
+            <div className="text-center space-y-2">
+              <p className="text-muted-foreground">Scan this QR code to follow me</p>
+              <p className="font-semibold text-primary">@__santhosh.xzx___</p>
+            </div>
+            <div className="flex gap-3">
+              <Button 
+                variant="outline" 
+                onClick={() => {
+                  window.open('https://www.instagram.com/__santhosh.xzx___?igsh=OHFhYWZwMnR2Z3Zz', '_blank');
+                  setShowInstagramQR(false);
+                }}
+                className="flex items-center gap-2"
+              >
+                <ExternalLink size={16} />
+                Open Instagram
+              </Button>
+              <Button 
+                variant="default"
+                onClick={() => setShowInstagramQR(false)}
+              >
+                Close
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
