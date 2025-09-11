@@ -325,11 +325,6 @@ const Portfolio = () => {
                 </div>
                 <div className="w-px h-8 bg-white/20"></div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-white">50+</div>
-                  <div className="text-xs text-white/70">Projects</div>
-                </div>
-                <div className="w-px h-8 bg-white/20"></div>
-                <div className="text-center">
                   <div className="text-2xl font-bold text-white">3+</div>
                   <div className="text-xs text-white/70">Years Experience</div>
                 </div>
