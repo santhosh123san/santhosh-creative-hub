@@ -280,7 +280,7 @@ const Portfolio = () => {
               {/* Description */}
               <p className="text-xl lg:text-2xl text-white/80 leading-relaxed font-light max-w-xl">
                 Crafting digital experiences that blend{' '}
-                <span className="text-white font-medium">Full Stack Developer with expertise in building scalable web applications using modern front-end and back-end technologies. Skilled in crafting clean, responsive UIs and robust APIs that drive seamless user experiences. Passionate about problem-solving, agile development, and delivering high-quality solutions</span> with{' '}
+                <span className="text-white font-medium">Full Stack Developer with expertise in building scalable web applications using modern front-end and back-end technologies</span> with{' '}
                 <span className="text-white font-medium">stunning visual design</span>.
               </p>
 
