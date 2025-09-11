@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Hero3DBackground from './Hero3DBackground';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -234,6 +235,9 @@ const Portfolio = () => {
 
       {/* Hero Section */}
       <section id="home" className="pt-16 min-h-screen flex items-center bg-hero-gradient relative overflow-hidden">
+        {/* 3D Interactive Background */}
+        <Hero3DBackground />
+        
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           {/* Gradient Overlay */}
