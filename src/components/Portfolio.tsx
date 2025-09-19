@@ -255,8 +255,8 @@ const Portfolio = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-            <div className="text-white space-y-8 animate-fade-up">
+          <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[80vh]">
+            <div className="text-white space-y-8 animate-fade-up lg:text-center lg:flex lg:flex-col lg:justify-center">
               {/* Status Badge */}
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 text-sm">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
@@ -343,7 +343,7 @@ const Portfolio = () => {
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-tl from-primary/30 to-transparent rounded-full -rotate-12 blur-lg"></div>
               
               {/* Main Image Container - Circular Design */}
-              <div className="relative group w-80 h-80">
+              <div className="relative group w-96 h-96">
                 {/* Outer Glow Ring */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/20 to-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 animate-pulse"></div>
                 
@@ -376,7 +376,7 @@ const Portfolio = () => {
               </div>
 
               {/* Orbiting Elements */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 pointer-events-none">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[28rem] h-[28rem] pointer-events-none">
                 <div className="absolute inset-0 border border-white/10 rounded-full animate-spin" style={{ animationDuration: '20s' }}>
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white/30 rounded-full"></div>
                 </div>
