@@ -28,6 +28,7 @@ import {
 import santhoshProfile from '@/assets/santhosh-profile.jpg';
 import santhoshHero from '@/assets/santhosh-hero.jpg';
 import santhoshAbout from '@/assets/santhosh-about.jpg';
+import santhoshHeroNew from '@/assets/santhosh-hero-new.jpg';
 import attendanceSoftware from '@/assets/attendance-monitoring-new.jpg';
 import turfBookingSystem from '@/assets/turf-booking-new.jpg';
 import posterDesigns from '@/assets/poster-designs-new.jpg';
@@ -336,34 +337,40 @@ const Portfolio = () => {
             </div>
 
             {/* Hero Image with Modern Effects */}
-            <div className="relative animate-scale-in lg:justify-self-end">
+            <div className="relative animate-scale-in lg:justify-self-end flex justify-center">
               {/* Decorative Elements */}
-              <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-white/20 to-transparent rounded-3xl rotate-12 blur-xl"></div>
-              <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-tl from-primary/30 to-transparent rounded-2xl -rotate-12 blur-lg"></div>
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-white/20 to-transparent rounded-full rotate-12 blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-tl from-primary/30 to-transparent rounded-full -rotate-12 blur-lg"></div>
               
-              {/* Main Image Container */}
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-2 shadow-elegant">
-                  <img 
-                    src={santhoshAbout} 
-                    alt="Santhosh T - Full Stack Developer" 
-                    className="rounded-2xl w-full h-auto animate-float shadow-2xl"
-                  />
-                  
-                  {/* Floating Info Cards */}
-                  <div className="absolute -top-4 -left-4 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-card animate-float" style={{ animationDelay: '1s' }}>
-                    <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      <div className="text-sm font-medium text-gray-800">Currently Available</div>
-                    </div>
+              {/* Main Image Container - Circular Design */}
+              <div className="relative group w-80 h-80">
+                {/* Outer Glow Ring */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/20 to-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 animate-pulse"></div>
+                
+                {/* Border Ring */}
+                <div className="absolute inset-2 bg-gradient-to-br from-white via-white/90 to-white/80 rounded-full p-1 shadow-2xl">
+                  {/* Inner Shadow Ring */}
+                  <div className="relative w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 rounded-full p-1">
+                    <img 
+                      src={santhoshHeroNew} 
+                      alt="Santhosh T - Full Stack Developer" 
+                      className="w-full h-full object-cover rounded-full shadow-inner animate-float"
+                    />
                   </div>
-                  
-                  <div className="absolute -bottom-4 -right-4 bg-primary/90 backdrop-blur-md rounded-2xl p-4 shadow-card animate-float" style={{ animationDelay: '2s' }}>
-                    <div className="flex items-center gap-2 text-white">
-                      <Code size={16} />
-                      <div className="text-sm font-medium">Full Stack Dev</div>
-                    </div>
+                </div>
+                
+                {/* Floating Info Cards */}
+                <div className="absolute -top-6 -left-6 bg-white/90 backdrop-blur-md rounded-2xl p-3 shadow-card animate-float" style={{ animationDelay: '1s' }}>
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <div className="text-sm font-medium text-gray-800">Currently Available</div>
+                  </div>
+                </div>
+                
+                <div className="absolute -bottom-6 -right-6 bg-primary/90 backdrop-blur-md rounded-2xl p-3 shadow-card animate-float" style={{ animationDelay: '2s' }}>
+                  <div className="flex items-center gap-2 text-white">
+                    <Code size={16} />
+                    <div className="text-sm font-medium">Full Stack Dev</div>
                   </div>
                 </div>
               </div>
