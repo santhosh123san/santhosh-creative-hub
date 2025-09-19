@@ -346,7 +346,7 @@ const Portfolio = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
                 <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-2 shadow-elegant">
                   <img 
-                    src={santhoshHero} 
+                    src={santhoshAbout} 
                     alt="Santhosh T - Full Stack Developer" 
                     className="rounded-2xl w-full h-auto animate-float shadow-2xl"
                   />
@@ -398,7 +398,7 @@ const Portfolio = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img 
-                src={santhoshAbout} 
+                src={santhoshHero} 
                 alt="Santhosh T - Full Stack Developer" 
                 className="rounded-2xl shadow-card w-full max-w-md mx-auto"
               />
