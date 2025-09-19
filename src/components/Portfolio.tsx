@@ -395,15 +395,8 @@ const Portfolio = () => {
       {/* About Section */}
       <section id="about" className="py-20 bg-section-gradient">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <img 
-                src={santhoshHero} 
-                alt="Santhosh T - Full Stack Developer" 
-                className="rounded-2xl shadow-card w-full max-w-md mx-auto"
-              />
-            </div>
-            <div className="space-y-6 animate-fade-up">
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6 animate-fade-up text-center">
               <h2 className="text-4xl font-bold text-foreground mb-6">About Me</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm <strong>Santhosh T</strong>, a passionate Full Stack Web Developer and Graphic Designer currently pursuing my B.Tech in Information Technology at Mahendra Institute of Technology.
