@@ -30,7 +30,6 @@ import santhoshHero from '@/assets/santhosh-hero.jpg';
 import santhoshAbout from '@/assets/santhosh-about.jpg';
 import santhoshHeroNew from '@/assets/santhosh-hero-new.jpg';
 import attendanceSoftware from '@/assets/attendance-monitoring-new.jpg';
-import turfBookingSystem from '@/assets/turf-booking-new.jpg';
 import posterDesigns from '@/assets/poster-designs-new.jpg';
 
 const Portfolio = () => {
@@ -157,17 +156,17 @@ const Portfolio = () => {
       category: 'Data Analytics'
     },
     {
-      title: 'Excel Data Analysis Project',
-      description: 'Comprehensive data analysis using advanced Excel features including pivot tables and charts.',
-      image: turfBookingSystem,
-      tech: ['Excel', 'Pivot Tables', 'Charts', 'Data Cleaning'],
+      title: 'Sales Data Analysis Dashboard',
+      description: 'Comprehensive sales analysis with trend identification, KPI tracking, and actionable business insights.',
+      image: posterDesigns,
+      tech: ['Excel', 'Power BI', 'Pivot Tables', 'Charts'],
       category: 'Data Analytics'
     },
     {
-      title: 'Data Visualization Dashboard',
-      description: 'Interactive dashboard showcasing data insights with visual storytelling.',
-      image: posterDesigns,
-      tech: ['Power BI', 'Data Visualization', 'DAX'],
+      title: 'Customer Segmentation Analysis',
+      description: 'Python-based customer segmentation using data clustering techniques for targeted marketing insights.',
+      image: santhoshProfile,
+      tech: ['Python', 'Pandas', 'Matplotlib', 'Data Analysis'],
       category: 'Data Analytics'
     }
   ];
@@ -833,7 +832,7 @@ const Portfolio = () => {
               </Card>
             </div>
 
-            {/* Turf Booking System */}
+            {/* Sales Data Analysis Dashboard */}
             <div className="group">
               <Card className="bg-gradient-to-bl from-card to-card/50 shadow-elegant hover:shadow-2xl transition-all duration-500 overflow-hidden border-0">
                 <div className="grid lg:grid-cols-2 gap-0">
@@ -841,12 +840,12 @@ const Portfolio = () => {
                   <CardContent className="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
                     <div className="space-y-6">
                       <div>
-                        <Badge className="mb-3 bg-emerald-100 text-emerald-700 border-emerald-200">Web Development</Badge>
-                        <h3 className="text-3xl font-bold text-foreground mb-4">Turf Booking System</h3>
+                        <Badge className="mb-3 bg-emerald-100 text-emerald-700 border-emerald-200">Data Analytics</Badge>
+                        <h3 className="text-3xl font-bold text-foreground mb-4">Sales Data Analysis Dashboard</h3>
                         <p className="text-muted-foreground text-lg leading-relaxed">
-                          A modern, responsive web application for sports turf reservations and booking management. 
-                          Built with the MERN stack, it provides seamless booking experiences, real-time availability 
-                          updates, and comprehensive management tools for facility owners.
+                          A comprehensive sales analysis project using Excel and Power BI to identify trends, 
+                          track KPIs, and generate actionable business insights. Features interactive dashboards 
+                          with drill-down capabilities for detailed analysis.
                         </p>
                       </div>
 
@@ -858,12 +857,12 @@ const Portfolio = () => {
                         </h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {[
-                            'Real-time booking system',
-                            'Payment gateway integration',
-                            'User authentication & profiles',
-                            'Booking history & receipts',
-                            'Admin dashboard',
-                            'Mobile-responsive design'
+                            'Sales trend analysis',
+                            'KPI tracking dashboards',
+                            'Regional performance metrics',
+                            'Product category insights',
+                            'Monthly/Quarterly reports',
+                            'Pivot table analysis'
                           ].map((feature, index) => (
                             <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
                               <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
@@ -877,7 +876,7 @@ const Portfolio = () => {
                       <div>
                         <h4 className="font-semibold text-foreground mb-3">Technologies Used</h4>
                         <div className="flex flex-wrap gap-2">
-                          {['React', 'Node.js', 'Express', 'MongoDB', 'JWT Auth', 'Stripe API', 'Tailwind CSS'].map((tech, index) => (
+                          {['Excel', 'Power BI', 'Pivot Tables', 'VLOOKUP', 'Charts', 'Data Cleaning', 'DAX'].map((tech, index) => (
                             <Badge key={index} variant="secondary" className="bg-muted/50 hover:bg-muted transition-colors">
                               {tech}
                             </Badge>
@@ -890,16 +889,16 @@ const Portfolio = () => {
                         <h4 className="font-semibold text-foreground mb-3">Project Impact</h4>
                         <div className="grid grid-cols-3 gap-4 text-center">
                           <div>
-                            <div className="text-xl font-bold text-emerald-600">500+</div>
-                            <div className="text-xs text-muted-foreground">Bookings/Month</div>
+                            <div className="text-xl font-bold text-emerald-600">10K+</div>
+                            <div className="text-xs text-muted-foreground">Records Analyzed</div>
                           </div>
                           <div>
-                            <div className="text-xl font-bold text-emerald-600">98%</div>
-                            <div className="text-xs text-muted-foreground">User Satisfaction</div>
+                            <div className="text-xl font-bold text-emerald-600">15+</div>
+                            <div className="text-xs text-muted-foreground">KPIs Tracked</div>
                           </div>
                           <div>
-                            <div className="text-xl font-bold text-emerald-600">24/7</div>
-                            <div className="text-xs text-muted-foreground">Online Availability</div>
+                            <div className="text-xl font-bold text-emerald-600">5</div>
+                            <div className="text-xs text-muted-foreground">Interactive Charts</div>
                           </div>
                         </div>
                       </div>
@@ -922,61 +921,54 @@ const Portfolio = () => {
                   <div className="relative overflow-hidden bg-gradient-to-br from-emerald-600 via-teal-600 to-green-700 p-8 flex items-center justify-center min-h-[400px] order-1 lg:order-2">
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px] opacity-30"></div>
                     
-                    {/* Mock Booking Interface */}
+                    {/* Mock Sales Dashboard Interface */}
                     <div className="relative w-full max-w-lg">
                       <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-2xl">
                         {/* Header */}
                         <div className="flex items-center justify-between mb-6">
-                          <h3 className="text-white text-lg font-semibold">Turf Booking</h3>
+                          <h3 className="text-white text-lg font-semibold">Sales Dashboard</h3>
                           <div className="bg-green-400 text-green-900 px-3 py-1 rounded-full text-xs font-medium">
-                            Available
+                            Live Data
                           </div>
                         </div>
 
-                        {/* Booking Slots */}
-                        <div className="space-y-3 mb-6">
-                          {[
-                            { time: '06:00 - 07:00', status: 'available', price: '₹500' },
-                            { time: '07:00 - 08:00', status: 'booked', price: '₹500' },
-                            { time: '08:00 - 09:00', status: 'available', price: '₹600' },
-                            { time: '09:00 - 10:00', status: 'available', price: '₹600' }
-                          ].map((slot, index) => (
-                            <div key={index} className={`flex items-center justify-between p-3 rounded-lg border ${
-                              slot.status === 'available' 
-                                ? 'bg-white/10 border-white/20 text-white' 
-                                : 'bg-red-500/20 border-red-400/30 text-red-200'
-                            }`}>
-                              <span className="text-sm font-medium">{slot.time}</span>
-                              <div className="flex items-center gap-2">
-                                <span className="text-sm">{slot.price}</span>
-                                <div className={`w-2 h-2 rounded-full ${
-                                  slot.status === 'available' ? 'bg-green-400' : 'bg-red-400'
-                                }`}></div>
-                              </div>
-                            </div>
-                          ))}
+                        {/* KPI Cards */}
+                        <div className="grid grid-cols-2 gap-4 mb-6">
+                          <div className="bg-white/10 rounded-lg p-4 border border-white/20">
+                            <div className="text-2xl font-bold text-white">₹2.5M</div>
+                            <div className="text-xs text-white/70">Total Revenue</div>
+                          </div>
+                          <div className="bg-white/10 rounded-lg p-4 border border-white/20">
+                            <div className="text-2xl font-bold text-white">+18%</div>
+                            <div className="text-xs text-white/70">Growth Rate</div>
+                          </div>
                         </div>
 
-                        {/* Quick Stats */}
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="bg-white/10 rounded-lg p-3 border border-white/20 text-center">
-                            <div className="text-lg font-bold text-white">12</div>
-                            <div className="text-xs text-white/70">Available Slots</div>
+                        {/* Chart Visualization */}
+                        <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                          <div className="flex items-end gap-2 h-16">
+                            {[40, 65, 45, 80, 55, 90, 75].map((height, index) => (
+                              <div 
+                                key={index}
+                                className="bg-gradient-to-t from-emerald-400 to-teal-300 rounded-sm flex-1 animate-pulse"
+                                style={{ 
+                                  height: `${height}%`,
+                                  animationDelay: `${index * 0.2}s`
+                                }}
+                              ></div>
+                            ))}
                           </div>
-                          <div className="bg-white/10 rounded-lg p-3 border border-white/20 text-center">
-                            <div className="text-lg font-bold text-white">₹7,200</div>
-                            <div className="text-xs text-white/70">Today's Revenue</div>
-                          </div>
+                          <div className="text-xs text-white/60 mt-2">Monthly Sales Trends</div>
                         </div>
                       </div>
                     </div>
 
                     {/* Floating Elements */}
                     <div className="absolute top-8 left-8 bg-white/10 backdrop-blur-md rounded-full p-3 animate-float">
-                      <Code className="text-white" size={20} />
+                      <Monitor className="text-white" size={20} />
                     </div>
                     <div className="absolute bottom-8 right-8 bg-white/10 backdrop-blur-md rounded-full p-3 animate-float" style={{ animationDelay: '1s' }}>
-                      <Monitor className="text-white" size={20} />
+                      <Database className="text-white" size={20} />
                     </div>
                   </div>
                 </div>
