@@ -96,93 +96,79 @@ const Portfolio = () => {
 
   const skills = [
     { 
-      category: 'Web Development', 
-      percentage: 80, 
-      icon: Code,
-      skills: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Node.js', 'Express']
-    },
-    { 
-      category: 'Graphic Design', 
-      percentage: 75, 
-      icon: Palette,
-      skills: ['Photoshop', 'Poster Design', 'Brochures', 'UI/UX', 'Brand Identity']
-    },
-    { 
-      category: 'Backend & Database', 
-      percentage: 70, 
-      icon: Database,
-      skills: ['Python', 'MySQL', 'MongoDB', 'API Development', 'Server Management']
-    },
-    { 
-      category: 'Tools & Software', 
-      percentage: 85, 
+      category: 'Excel', 
+      percentage: 90, 
       icon: Monitor,
-      skills: ['VS Code', 'Git', 'Figma', 'Adobe Photoshop', 'Canva']
+      skills: ['Data Cleaning', 'Pivot Tables', 'VLOOKUP', 'Formulas', 'Charts', 'Macros']
+    },
+    { 
+      category: 'Power BI', 
+      percentage: 40, 
+      icon: Palette,
+      skills: ['Dashboards', 'Data Visualization', 'Reports', 'DAX Basics']
+    },
+    { 
+      category: 'Python', 
+      percentage: 60, 
+      icon: Code,
+      skills: ['Pandas', 'NumPy', 'Data Analysis', 'Matplotlib', 'Jupyter Notebooks']
+    },
+    { 
+      category: 'SQL', 
+      percentage: 40, 
+      icon: Database,
+      skills: ['Queries', 'Joins', 'Data Extraction', 'Database Management']
     }
   ];
 
   const services = [
     {
-      title: 'Responsive Web Development',
-      description: 'Frontend & Backend using MERN stack',
-      icon: Code,
-      features: ['React Applications', 'Node.js Backend', 'Database Integration', 'API Development']
-    },
-    {
-      title: 'Graphic Design',
-      description: 'Posters, Brochures, Brand Identity',
-      icon: Palette,
-      features: ['Poster Design', 'Brand Identity', 'Digital Graphics', 'Print Design']
-    },
-    {
-      title: 'UI/UX Design',
-      description: 'Prototyping and interfaces using Figma',
+      title: 'Data Analysis',
+      description: 'Transform raw data into actionable insights',
       icon: Monitor,
-      features: ['Wireframing', 'Prototyping', 'User Research', 'Interface Design']
+      features: ['Data Cleaning', 'Statistical Analysis', 'Trend Identification', 'Report Generation']
     },
     {
-      title: 'Custom Software Solutions',
-      description: 'Python applications with database integration',
+      title: 'Data Visualization',
+      description: 'Create compelling visual stories from data',
+      icon: Palette,
+      features: ['Charts & Graphs', 'Interactive Dashboards', 'Power BI Reports', 'Excel Visualizations']
+    },
+    {
+      title: 'Python Analytics',
+      description: 'Advanced data processing and analysis',
+      icon: Code,
+      features: ['Pandas DataFrames', 'Data Wrangling', 'Automated Scripts', 'Statistical Modeling']
+    },
+    {
+      title: 'Database Management',
+      description: 'SQL queries and data extraction',
       icon: Database,
-      features: ['Desktop Applications', 'Data Analysis', 'Automation', 'Database Design']
+      features: ['SQL Queries', 'Data Extraction', 'Database Design', 'Data Integration']
     }
   ];
 
   const projects = [
     {
-      title: 'Attendance Monitoring Software',
-      description: 'Python-based attendance tracking system with data analysis and reporting.',
+      title: 'Voice-Recognition Data Update System',
+      description: 'Innovative system that captures voice input data, cleans and processes it, and visualizes results with interactive charts.',
       image: attendanceSoftware,
-      tech: ['Python', 'SQLite', 'Tkinter'],
-      category: 'Software Development'
+      tech: ['Python', 'Speech Recognition', 'Data Visualization', 'Excel'],
+      category: 'Data Analytics'
     },
     {
-      title: 'Turf Booking System',
-      description: 'Responsive web app for sports turf reservations and booking management.',
+      title: 'Excel Data Analysis Project',
+      description: 'Comprehensive data analysis using advanced Excel features including pivot tables and charts.',
       image: turfBookingSystem,
-      tech: ['React', 'Node.js', 'MongoDB'],
-      category: 'Web Development'
+      tech: ['Excel', 'Pivot Tables', 'Charts', 'Data Cleaning'],
+      category: 'Data Analytics'
     },
     {
-      title: 'Poster Design Showcase',
-      description: 'Creative poster gallery for college and community events.',
+      title: 'Data Visualization Dashboard',
+      description: 'Interactive dashboard showcasing data insights with visual storytelling.',
       image: posterDesigns,
-      tech: ['Photoshop', 'Illustrator', 'Canva'],
-      category: 'Graphic Design'
-    },
-    {
-      title: 'E-commerce Platform',
-      description: 'Full-stack online shopping platform with payment integration.',
-      image: santhoshProfile,
-      tech: ['React', 'Express', 'PostgreSQL'],
-      category: 'Web Development'
-    },
-    {
-      title: 'Mobile App Design',
-      description: 'UI/UX design for fitness tracking mobile application.',
-      image: santhoshProfile,
-      tech: ['Figma', 'UI Design', 'Prototyping'],
-      category: 'UI/UX Design'
+      tech: ['Power BI', 'Data Visualization', 'DAX'],
+      category: 'Data Analytics'
     }
   ];
 
@@ -205,7 +191,7 @@ const Portfolio = () => {
               <button onClick={() => scrollToSection('home')} className="text-foreground hover:text-primary transition-smooth">Home</button>
               <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-smooth">About</button>
               <button onClick={() => scrollToSection('skills')} className="text-foreground hover:text-primary transition-smooth">Skills</button>
-              <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-primary transition-smooth">Services</button>
+              <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-primary transition-smooth">Skills</button>
               <button onClick={() => scrollToSection('projects')} className="text-foreground hover:text-primary transition-smooth">Projects</button>
               <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-primary transition-smooth">Contact</button>
             </div>
@@ -225,7 +211,7 @@ const Portfolio = () => {
                 <button onClick={() => scrollToSection('home')} className="block w-full text-left text-foreground hover:text-primary transition-smooth">Home</button>
                 <button onClick={() => scrollToSection('about')} className="block w-full text-left text-foreground hover:text-primary transition-smooth">About</button>
                 <button onClick={() => scrollToSection('skills')} className="block w-full text-left text-foreground hover:text-primary transition-smooth">Skills</button>
-                <button onClick={() => scrollToSection('services')} className="block w-full text-left text-foreground hover:text-primary transition-smooth">Services</button>
+                <button onClick={() => scrollToSection('services')} className="block w-full text-left text-foreground hover:text-primary transition-smooth">Skills</button>
                 <button onClick={() => scrollToSection('projects')} className="block w-full text-left text-foreground hover:text-primary transition-smooth">Projects</button>
                 <button onClick={() => scrollToSection('contact')} className="block w-full text-left text-foreground hover:text-primary transition-smooth">Contact</button>
               </div>
@@ -260,7 +246,7 @@ const Portfolio = () => {
               {/* Status Badge */}
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 text-sm">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                Available for Freelance Work
+                Aspiring Data Analyst
               </div>
 
               {/* Main Heading */}
@@ -274,10 +260,10 @@ const Portfolio = () => {
                 </h1>
                 <div className="relative">
                   <h2 className="text-2xl lg:text-4xl font-medium text-white/90 leading-relaxed">
-                    Full Stack Developer &{' '}
+                    Aspiring{' '}
                     <span className="relative inline-block">
                       <span className="bg-gradient-to-r from-yellow-200 to-orange-200 bg-clip-text text-transparent font-semibold">
-                        Creative Designer
+                        Data Analyst
                       </span>
                     </span>
                   </h2>
@@ -286,19 +272,24 @@ const Portfolio = () => {
 
               {/* Description */}
               <p className="text-xl lg:text-2xl text-white/80 leading-relaxed font-light max-w-xl">
-                Crafting digital experiences that blend{' '}
-                <span className="text-white font-medium">Full Stack Developer with expertise in building scalable web applications using modern front-end and back-end technologies</span> with{' '}
-                <span className="text-white font-medium">stunning visual design</span>.
+                I am an IT student improving my data analytics skills to become a{' '}
+                <span className="text-white font-medium">Data Analyst</span> and later a{' '}
+                <span className="text-white font-medium">Data Scientist</span>.
               </p>
 
               {/* Tech Stack Pills */}
               <div className="flex flex-wrap gap-3">
-                {['React', 'Node.js', 'Python', 'MongoDB', 'UI/UX'].map((tech) => (
+                {['Excel', 'Power BI', 'Python', 'SQL'].map((tech) => (
                   <div key={tech} className="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white/90 text-sm font-medium hover:bg-white/20 transition-smooth cursor-pointer">
                     {tech}
                   </div>
                 ))}
               </div>
+
+              {/* Tagline */}
+              <p className="text-lg text-white/70 italic">
+                "Passionate about turning data into insights."
+              </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -369,8 +360,8 @@ const Portfolio = () => {
                 
                 <div className="absolute -bottom-6 -right-6 bg-primary/90 backdrop-blur-md rounded-2xl p-3 shadow-card animate-float" style={{ animationDelay: '2s' }}>
                   <div className="flex items-center gap-2 text-white">
-                    <Code size={16} />
-                    <div className="text-sm font-medium">Full Stack Dev</div>
+                    <Database size={16} />
+                    <div className="text-sm font-medium">Data Analyst</div>
                   </div>
                 </div>
               </div>
@@ -406,23 +397,38 @@ const Portfolio = () => {
             <div className="space-y-6 animate-fade-up text-center">
               <h2 className="text-4xl font-bold text-foreground mb-6">About Me</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm <strong>Santhosh T</strong>, a passionate Full Stack Web Developer and Graphic Designer currently pursuing my B.Tech in Information Technology at Mahendra Institute of Technology.
+                I'm <strong>Santhosh T</strong>, an IT student passionate about data analytics. I'm on a journey to become a <strong>Data Analyst</strong> and eventually a <strong>Data Scientist</strong>.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                With a current CGPA of <strong>8.54</strong>, I actively participate in tech symposiums and engage with design and development communities. I'm dedicated to creating innovative solutions that blend functionality with beautiful design.
+                Currently focused on improving my analytical skills through hands-on projects and continuous learning in Excel, Power BI, Python, and SQL.
               </p>
+              
               <div className="bg-card-gradient p-6 rounded-xl shadow-card">
                 <h3 className="font-semibold text-lg mb-2">Education</h3>
                 <p className="text-muted-foreground">
-                  Currently pursuing B.Tech in Information Technology at Mahendra Institute of Technology (3rd year) with a CGPA of 8.54.
+                  3rd year B.Tech IT student at <strong>Mahendra Institute of Technology</strong>, graduating in 2027.
                 </p>
               </div>
+
+              <div className="bg-card-gradient p-6 rounded-xl shadow-card">
+                <h3 className="font-semibold text-lg mb-2">Work Experience</h3>
+                <p className="text-muted-foreground">
+                  Internship at <strong>TechnoHacks Solutions Pvt. Ltd.</strong> - Focused on Excel basics & advanced skills including data cleaning, pivot tables, and data visualization.
+                </p>
+              </div>
+
+              <div className="bg-card-gradient p-6 rounded-xl shadow-card">
+                <h3 className="font-semibold text-lg mb-2">Career Goal</h3>
+                <p className="text-muted-foreground">
+                  Aspiring to transition from <strong>Data Analyst</strong> to <strong>Data Scientist</strong>, leveraging data to drive business decisions and create impactful insights.
+                </p>
+              </div>
+
               <Button 
                 variant="cta" 
                 size="lg" 
                 className="group"
                 onClick={() => {
-                  // First open in new tab for preview
                   window.open('/santhosh-resume-latest.jpg', '_blank');
                 }}
               >
@@ -481,9 +487,9 @@ const Portfolio = () => {
       <section className="py-20 bg-section-gradient">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">My Skills</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Data Analytics Skills & Tools</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Technologies and tools I work with to create amazing digital experiences
+              Tools and technologies I use for data analysis and visualization
             </p>
           </div>
           
@@ -512,9 +518,9 @@ const Portfolio = () => {
       <section id="services" className="py-12 bg-section-gradient">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-3">My Services</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-3">Areas of Proficiency</h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Comprehensive solutions for your digital needs
+              Data analysis skills and tools I'm proficient in
             </p>
           </div>
           
@@ -682,7 +688,7 @@ const Portfolio = () => {
           </div>
 
           <div className="space-y-24">
-            {/* Attendance Monitoring Software */}
+            {/* Voice-Recognition Data Update System */}
             <div className="group">
               <Card className="bg-gradient-to-br from-card to-card/50 shadow-elegant hover:shadow-2xl transition-all duration-500 overflow-hidden border-0">
                 <div className="grid lg:grid-cols-2 gap-0">
@@ -695,7 +701,7 @@ const Portfolio = () => {
                       <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-2xl">
                         {/* Header */}
                         <div className="flex items-center justify-between mb-6">
-                          <h3 className="text-white text-lg font-semibold">Attendance Dashboard</h3>
+                          <h3 className="text-white text-lg font-semibold">Voice Data Dashboard</h3>
                           <div className="flex gap-2">
                             <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                             <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
@@ -706,12 +712,12 @@ const Portfolio = () => {
                         {/* Stats Cards */}
                         <div className="grid grid-cols-2 gap-4 mb-6">
                           <div className="bg-white/10 rounded-lg p-4 border border-white/20">
-                            <div className="text-2xl font-bold text-white">94.7%</div>
-                            <div className="text-xs text-white/70">Overall Attendance</div>
+                            <div className="text-2xl font-bold text-white">🎤</div>
+                            <div className="text-xs text-white/70">Voice Input Active</div>
                           </div>
                           <div className="bg-white/10 rounded-lg p-4 border border-white/20">
-                            <div className="text-2xl font-bold text-white">1,247</div>
-                            <div className="text-xs text-white/70">Active Students</div>
+                            <div className="text-2xl font-bold text-white">500+</div>
+                            <div className="text-xs text-white/70">Records Processed</div>
                           </div>
                         </div>
 
@@ -729,7 +735,7 @@ const Portfolio = () => {
                               ></div>
                             ))}
                           </div>
-                          <div className="text-xs text-white/60 mt-2">Weekly Attendance Trends</div>
+                          <div className="text-xs text-white/60 mt-2">Data Visualization Output</div>
                         </div>
                       </div>
                     </div>
@@ -747,12 +753,12 @@ const Portfolio = () => {
                   <CardContent className="p-8 lg:p-12 flex flex-col justify-center">
                     <div className="space-y-6">
                       <div>
-                        <Badge className="mb-3 bg-violet-100 text-violet-700 border-violet-200">Software Development</Badge>
-                        <h3 className="text-3xl font-bold text-foreground mb-4">Attendance Monitoring Software</h3>
+                        <Badge className="mb-3 bg-violet-100 text-violet-700 border-violet-200">Data Analytics</Badge>
+                        <h3 className="text-3xl font-bold text-foreground mb-4">Voice-Recognition Data Update System</h3>
                         <p className="text-muted-foreground text-lg leading-relaxed">
-                          A comprehensive Python-based attendance tracking system designed for educational institutions. 
-                          Features real-time monitoring, automated report generation, and advanced data analytics to 
-                          streamline attendance management processes.
+                          An innovative system that captures voice input data, processes and cleans it automatically, 
+                          and generates interactive visualizations with charts. Streamlines data entry and analysis 
+                          through voice commands.
                         </p>
                       </div>
 
@@ -764,12 +770,12 @@ const Portfolio = () => {
                         </h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {[
-                            'Real-time attendance tracking',
-                            'Automated report generation', 
-                            'Student data management',
-                            'Export functionality (PDF/Excel)',
-                            'Advanced analytics dashboard',
-                            'Multi-class support'
+                            'Voice input data capture',
+                            'Automated data cleaning', 
+                            'Real-time processing',
+                            'Interactive chart generation',
+                            'Data visualization dashboard',
+                            'Export to Excel/CSV'
                           ].map((feature, index) => (
                             <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
                               <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
@@ -783,7 +789,7 @@ const Portfolio = () => {
                       <div>
                         <h4 className="font-semibold text-foreground mb-3">Technologies Used</h4>
                         <div className="flex flex-wrap gap-2">
-                          {['Python', 'SQLite', 'Tkinter', 'Pandas', 'Matplotlib', 'Data Analysis'].map((tech, index) => (
+                          {['Python', 'Speech Recognition', 'Pandas', 'Matplotlib', 'Excel', 'Data Cleaning'].map((tech, index) => (
                             <Badge key={index} variant="secondary" className="bg-muted/50 hover:bg-muted transition-colors">
                               {tech}
                             </Badge>
@@ -796,16 +802,16 @@ const Portfolio = () => {
                         <h4 className="font-semibold text-foreground mb-3">Project Impact</h4>
                         <div className="grid grid-cols-3 gap-4 text-center">
                           <div>
-                            <div className="text-xl font-bold text-primary">95%</div>
-                            <div className="text-xs text-muted-foreground">Time Saved</div>
+                            <div className="text-xl font-bold text-primary">80%</div>
+                            <div className="text-xs text-muted-foreground">Faster Data Entry</div>
                           </div>
                           <div>
-                            <div className="text-xl font-bold text-primary">1000+</div>
-                            <div className="text-xs text-muted-foreground">Students Managed</div>
+                            <div className="text-xl font-bold text-primary">500+</div>
+                            <div className="text-xs text-muted-foreground">Records Processed</div>
                           </div>
                           <div>
-                            <div className="text-xl font-bold text-primary">24/7</div>
-                            <div className="text-xs text-muted-foreground">System Uptime</div>
+                            <div className="text-xl font-bold text-primary">10+</div>
+                            <div className="text-xs text-muted-foreground">Chart Types</div>
                           </div>
                         </div>
                       </div>
@@ -1136,7 +1142,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="text-muted-foreground mb-4 md:mb-0">
-              © 2024 Santhosh T. All rights reserved.
+              © 2025 Santhosh T. All rights reserved.
             </div>
             <div className="text-muted-foreground">
               Crafted with ❤️ using React & Tailwind CSS
