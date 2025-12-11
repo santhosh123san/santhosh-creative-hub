@@ -428,7 +428,7 @@ const Portfolio = () => {
                 size="lg" 
                 className="group"
                 onClick={() => {
-                  window.open('/santhosh-resume-latest.jpg', '_blank');
+                  window.open('/santhosh-resume.pdf', '_blank');
                 }}
               >
                 <Download size={18} />
