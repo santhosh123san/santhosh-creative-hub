@@ -23,7 +23,15 @@ import {
   Download,
   Menu,
   X,
-  ChevronRight
+  ChevronRight,
+  BarChart3,
+  PieChart,
+  TrendingUp,
+  FileSpreadsheet,
+  LineChart,
+  Table2,
+  BrainCircuit,
+  Binary
 } from 'lucide-react';
 import santhoshProfile from '@/assets/santhosh-profile.jpg';
 import santhoshHero from '@/assets/santhosh-hero.jpg';
@@ -235,6 +243,26 @@ const Portfolio = () => {
           <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-white/15 rotate-45 blur-lg animate-float" style={{ animationDelay: '2s' }}></div>
           <div className="absolute top-1/3 right-10 w-24 h-24 bg-primary/15 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           
+          {/* Floating Technical Icons */}
+          <div className="absolute top-32 left-[15%] text-white/20 animate-float" style={{ animationDelay: '0.5s' }}>
+            <BarChart3 size={40} />
+          </div>
+          <div className="absolute top-[60%] left-[8%] text-white/15 animate-float" style={{ animationDelay: '1.5s' }}>
+            <PieChart size={32} />
+          </div>
+          <div className="absolute top-[25%] right-[15%] text-white/20 animate-float" style={{ animationDelay: '2.5s' }}>
+            <Database size={36} />
+          </div>
+          <div className="absolute bottom-[30%] right-[10%] text-white/15 animate-float" style={{ animationDelay: '3s' }}>
+            <TrendingUp size={34} />
+          </div>
+          <div className="absolute bottom-[15%] right-[25%] text-white/20 animate-float" style={{ animationDelay: '1s' }}>
+            <FileSpreadsheet size={30} />
+          </div>
+          <div className="absolute top-[45%] left-[5%] text-white/15 animate-float" style={{ animationDelay: '2s' }}>
+            <LineChart size={28} />
+          </div>
+          
           {/* Grid Pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20"></div>
         </div>
@@ -441,10 +469,22 @@ const Portfolio = () => {
       </section>
 
       {/* Skills Overview Section */}
-      <section id="skills" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      <section id="skills" className="py-20 bg-background relative overflow-hidden">
+        {/* Decorative background icons */}
+        <div className="absolute top-10 right-10 text-primary/5">
+          <BarChart3 size={120} />
+        </div>
+        <div className="absolute bottom-10 left-10 text-primary/5">
+          <PieChart size={100} />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Skills Overview</h2>
+            <div className="inline-flex items-center gap-3 mb-4">
+              <TrendingUp className="text-primary" size={32} />
+              <h2 className="text-4xl font-bold text-foreground">Skills Overview</h2>
+              <BarChart3 className="text-primary" size={32} />
+            </div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A comprehensive overview of my technical capabilities and expertise levels
             </p>
@@ -483,10 +523,22 @@ const Portfolio = () => {
       </section>
 
       {/* My Skills Section */}
-      <section className="py-20 bg-section-gradient">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-section-gradient relative overflow-hidden">
+        {/* Decorative background icons */}
+        <div className="absolute top-20 left-5 text-primary/5">
+          <Table2 size={80} />
+        </div>
+        <div className="absolute bottom-20 right-5 text-primary/5">
+          <FileSpreadsheet size={90} />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Data Analytics Skills & Tools</h2>
+            <div className="inline-flex items-center gap-3 mb-4">
+              <Database className="text-primary" size={32} />
+              <h2 className="text-4xl font-bold text-foreground">Data Analytics Skills & Tools</h2>
+              <Code className="text-primary" size={32} />
+            </div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Tools and technologies I use for data analysis and visualization
             </p>
@@ -517,7 +569,11 @@ const Portfolio = () => {
       <section id="services" className="py-12 bg-section-gradient">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-3">Areas of Proficiency</h2>
+            <div className="inline-flex items-center gap-3 mb-3">
+              <BrainCircuit className="text-primary" size={28} />
+              <h2 className="text-3xl font-bold text-foreground">Areas of Proficiency</h2>
+              <LineChart className="text-primary" size={28} />
+            </div>
             <p className="text-muted-foreground max-w-xl mx-auto">
               Data analysis skills and tools I'm proficient in
             </p>
@@ -672,6 +728,14 @@ const Portfolio = () => {
           <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-24 h-24 bg-secondary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
           <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+          
+          {/* Floating Technical Icons */}
+          <div className="absolute top-32 right-20 text-primary/10 animate-float">
+            <Binary size={60} />
+          </div>
+          <div className="absolute bottom-40 left-16 text-primary/10 animate-float" style={{ animationDelay: '1.5s' }}>
+            <Database size={50} />
+          </div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
