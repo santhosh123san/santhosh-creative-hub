@@ -736,7 +736,7 @@ const Portfolio = () => {
                   {[
                     { icon: Github, href: 'https://github.com/santhosh123san', color: 'cyan' as const },
                     { icon: Linkedin, href: 'https://linkedin.com/in/santhosh-t-6325412a3', color: 'purple' as const },
-                    { icon: Instagram, href: 'https://instagram.com/santhoshhhz.___', color: 'pink' as const },
+                    { icon: Instagram, href: 'https://instagram.com/santhoshhhz.__', color: 'pink' as const },
                   ].map((social, index) => (
                     <a
                       key={index}
