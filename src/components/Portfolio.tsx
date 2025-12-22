@@ -37,7 +37,11 @@ import {
   Sparkles,
   Zap,
   Target,
-  Rocket
+  Rocket,
+  GraduationCap,
+  Calendar,
+  Award,
+  BookOpen
 } from 'lucide-react';
 import santhoshProfile from '@/assets/santhosh-profile.jpg';
 import santhoshHeroNew from '@/assets/santhosh-hero-new.jpg';
@@ -210,7 +214,7 @@ const Portfolio = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+              {['Home', 'About', 'Education', 'Skills', 'Projects', 'Contact'].map((item) => (
                 <button 
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())} 
@@ -234,7 +238,7 @@ const Portfolio = () => {
           {mobileMenuOpen && (
             <div className="md:hidden absolute top-16 left-0 right-0 glass-dark border-b border-border animate-fade-up">
               <div className="px-4 py-4 space-y-4">
-                {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+                {['Home', 'About', 'Education', 'Skills', 'Projects', 'Contact'].map((item) => (
                   <button 
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())} 
@@ -472,8 +476,144 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Education Section */}
+      <section id="education" className="py-20 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern" />
+        
+        {/* Floating Icons */}
+        <div className="absolute top-10 left-10 text-neon-purple/10">
+          <GraduationCap size={120} />
+        </div>
+        <div className="absolute bottom-10 right-10 text-neon-cyan/10">
+          <BookOpen size={100} />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <NeonBadge color="purple">Education</NeonBadge>
+            <h2 className="text-4xl font-bold text-foreground mt-4 mb-4">
+              Academic <span className="text-neon-purple text-neon-purple-glow">Journey</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              My educational background and academic achievements
+            </p>
+          </div>
+          
+          {/* Timeline */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-neon-cyan via-neon-purple to-neon-pink rounded-full hidden md:block" />
+            
+            {[
+              {
+                degree: 'B.Tech - Information Technology',
+                institution: 'Mahendra Institute of Technology',
+                duration: '2023 – 2027',
+                score: 'CGPA: 8.53',
+                status: 'Current',
+                description: 'Focus on data analytics and aim to become a data scientist',
+                color: 'cyan' as const,
+                icon: GraduationCap
+              },
+              {
+                degree: 'HSC (Higher Secondary Certificate)',
+                institution: 'Government Higher Secondary School, Periyakulathupalayam, Karur',
+                duration: '2022 – 2023',
+                score: '89%',
+                status: null,
+                description: 'Strong foundation in mathematics and computer science',
+                color: 'purple' as const,
+                icon: BookOpen
+              },
+              {
+                degree: 'SSLC (Secondary School Leaving Certificate)',
+                institution: 'Government Higher Secondary School, Vangappalyam',
+                duration: '2020 – 2021',
+                score: '90%',
+                status: null,
+                description: 'Top performer',
+                color: 'pink' as const,
+                icon: Award
+              }
+            ].map((edu, index) => (
+              <div 
+                key={index} 
+                className={`relative flex items-center mb-12 last:mb-0 ${
+                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                } flex-col md:flex-row`}
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                {/* Timeline Dot */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex">
+                  <div className={`w-5 h-5 rounded-full bg-neon-${edu.color} shadow-neon-${edu.color} z-10 animate-pulse`} />
+                </div>
+                
+                {/* Card */}
+                <div className={`w-full md:w-[calc(50%-2rem)] ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'}`}>
+                  <TiltCard glowColor={edu.color} className="animate-fade-up">
+                    <Card className={`bg-card-gradient border-border/50 overflow-hidden hover:border-neon-${edu.color}/30 transition-all duration-300`}>
+                      <CardContent className="p-6">
+                        <div className={`flex items-start gap-4 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} flex-col sm:flex-row`}>
+                          {/* Icon */}
+                          <div className={`p-4 rounded-xl bg-neon-${edu.color}/10 shadow-neon-${edu.color} shrink-0`}>
+                            <edu.icon className={`text-neon-${edu.color}`} size={28} />
+                          </div>
+                          
+                          <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-left`}>
+                            {/* Status Badge */}
+                            {edu.status && (
+                              <div className={`mb-2 ${index % 2 === 0 ? 'md:flex md:justify-end' : ''}`}>
+                                <NeonBadge color="green" animated>
+                                  <div className="w-2 h-2 bg-neon-green rounded-full mr-2 animate-pulse" />
+                                  {edu.status}
+                                </NeonBadge>
+                              </div>
+                            )}
+                            
+                            {/* Degree */}
+                            <h3 className={`text-xl font-bold text-foreground mb-2`}>
+                              {edu.degree}
+                            </h3>
+                            
+                            {/* Institution */}
+                            <div className={`flex items-center gap-2 text-muted-foreground mb-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
+                              <MapPin size={14} className={`text-neon-${edu.color}`} />
+                              <span className="text-sm">{edu.institution}</span>
+                            </div>
+                            
+                            {/* Duration & Score */}
+                            <div className={`flex items-center gap-4 mb-3 flex-wrap ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
+                              <div className="flex items-center gap-2 text-muted-foreground">
+                                <Calendar size={14} className={`text-neon-${edu.color}`} />
+                                <span className="text-sm">{edu.duration}</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <Award size={14} className={`text-neon-${edu.color}`} />
+                                <span className={`text-sm font-semibold text-neon-${edu.color}`}>{edu.score}</span>
+                              </div>
+                            </div>
+                            
+                            {/* Description */}
+                            <p className="text-muted-foreground text-sm">
+                              {edu.description}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TiltCard>
+                </div>
+                
+                {/* Spacer for alternating layout */}
+                <div className="hidden md:block w-[calc(50%-2rem)]" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-background relative overflow-hidden">
+      <section id="skills" className="py-20 bg-section-gradient relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern" />
         
         {/* Floating Icons */}
