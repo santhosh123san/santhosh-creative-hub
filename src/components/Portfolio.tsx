@@ -736,14 +736,13 @@ const Portfolio = () => {
                   {[
                     { icon: Github, href: 'https://github.com/santhosh123san', color: 'cyan' as const },
                     { icon: Linkedin, href: 'https://linkedin.com/in/santhosh-t-6325412a3', color: 'purple' as const },
-                    { icon: Instagram, href: '#', color: 'pink' as const, onClick: () => setShowInstagramQR(true) },
+                    { icon: Instagram, href: 'https://instagram.com/santhoshhhz.___', color: 'pink' as const },
                   ].map((social, index) => (
                     <a
                       key={index}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={social.onClick}
                       className={`p-3 glass rounded-lg border border-border/50 hover:border-neon-${social.color}/30 hover:shadow-neon-${social.color} transition-all duration-300 group`}
                     >
                       <social.icon className={`text-foreground group-hover:text-neon-${social.color} transition-colors`} size={24} />
