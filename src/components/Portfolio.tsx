@@ -47,6 +47,7 @@ import santhoshProfile from '@/assets/santhosh-profile.jpg';
 import santhoshHeroNew from '@/assets/santhosh-hero-new.jpg';
 import attendanceSoftware from '@/assets/attendance-monitoring-new.jpg';
 import posterDesigns from '@/assets/poster-designs-new.jpg';
+import instagramQR from '@/assets/instagram-qr.png';
 
 const Portfolio = () => {
   const { toast } = useToast();
@@ -964,15 +965,15 @@ const Portfolio = () => {
             <DialogTitle className="text-center text-foreground">Follow on Instagram</DialogTitle>
           </DialogHeader>
           <div className="flex flex-col items-center space-y-4 p-4">
-            <div className="w-48 h-48 bg-muted rounded-lg flex items-center justify-center border border-neon-pink/30">
+            <div className="w-64 h-64 bg-white rounded-lg flex items-center justify-center">
               <img 
-                src="/lovable-uploads/c427d0d6-8bcf-49ec-afeb-7ce939142261.png" 
-                alt="Instagram QR Code" 
-                className="w-full h-full object-contain p-4"
+                src={instagramQR}
+                alt="Instagram QR Code - @santhoshhhz.__" 
+                className="w-full h-full object-contain p-2"
               />
             </div>
             <p className="text-muted-foreground text-sm text-center">
-              Scan this QR code to follow me on Instagram
+              Scan this QR code to follow <span className="text-neon-pink font-semibold">@santhoshhhz.__</span> on Instagram
             </p>
           </div>
         </DialogContent>
