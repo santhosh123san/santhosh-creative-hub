@@ -968,13 +968,21 @@ const Portfolio = () => {
             <div className="w-64 h-64 bg-white rounded-lg flex items-center justify-center">
               <img 
                 src={instagramQR}
-                alt="Instagram QR Code - @santhoshhhz.__" 
+                alt="Instagram QR Code - @santhoshhhz.___" 
                 className="w-full h-full object-contain p-2"
               />
             </div>
             <p className="text-muted-foreground text-sm text-center">
-              Scan this QR code to follow <span className="text-neon-pink font-semibold">@santhoshhhz.__</span> on Instagram
+              Scan this QR code to follow <span className="text-neon-pink font-semibold">@santhoshhhz.___</span> on Instagram
             </p>
+            <a 
+              href="https://www.instagram.com/santhoshhhz.___?igsh=OHFhYWZwMnR2Z3Zz" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-gradient-to-r from-neon-pink to-purple-500 text-white rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+            >
+              Open Instagram
+            </a>
           </div>
         </DialogContent>
       </Dialog>
