@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import Hero3DBackground from './Hero3DBackground';
 import TiltCard from './TiltCard';
@@ -8,9 +9,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
-import { 
+import {
   Code, 
   Palette, 
   Database, 
@@ -47,17 +47,17 @@ import santhoshProfile from '@/assets/santhosh-profile.jpg';
 import santhoshHeroNew from '@/assets/santhosh-hero-new.jpg';
 import attendanceSoftware from '@/assets/attendance-monitoring-new.jpg';
 import posterDesigns from '@/assets/poster-designs-new.jpg';
-import instagramQR from '@/assets/instagram-qr.png';
 
 const Portfolio = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showInstagramQR, setShowInstagramQR] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -108,7 +108,6 @@ const Portfolio = () => {
     }
   };
   const [showAllProjects, setShowAllProjects] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const skills = [
     { 
@@ -875,19 +874,29 @@ const Portfolio = () => {
                 <h3 className="text-foreground font-semibold mb-4">Connect With Me</h3>
                 <div className="flex gap-4">
                   {[
-                    { icon: Github, href: 'https://github.com/santhosh123san', color: 'cyan' as const },
-                    { icon: Linkedin, href: 'https://linkedin.com/in/santhosh-t-6325412a3', color: 'purple' as const },
-                    { icon: Instagram, href: 'https://instagram.com/santhoshhhz.__', color: 'pink' as const },
+                    { icon: Github, href: 'https://github.com/santhosh123san', color: 'cyan' as const, external: true },
+                    { icon: Linkedin, href: 'https://linkedin.com/in/santhosh-t-6325412a3', color: 'purple' as const, external: true },
+                    { icon: Instagram, href: '/instagram', color: 'pink' as const, external: false },
                   ].map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`p-3 glass rounded-lg border border-border/50 hover:border-neon-${social.color}/30 hover:shadow-neon-${social.color} transition-all duration-300 group`}
-                    >
-                      <social.icon className={`text-foreground group-hover:text-neon-${social.color} transition-colors`} size={24} />
-                    </a>
+                    social.external ? (
+                      <a
+                        key={index}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`p-3 glass rounded-lg border border-border/50 hover:border-neon-${social.color}/30 hover:shadow-neon-${social.color} transition-all duration-300 group`}
+                      >
+                        <social.icon className={`text-foreground group-hover:text-neon-${social.color} transition-colors`} size={24} />
+                      </a>
+                    ) : (
+                      <button
+                        key={index}
+                        onClick={() => navigate(social.href)}
+                        className={`p-3 glass rounded-lg border border-border/50 hover:border-neon-${social.color}/30 hover:shadow-neon-${social.color} transition-all duration-300 group`}
+                      >
+                        <social.icon className={`text-foreground group-hover:text-neon-${social.color} transition-colors`} size={24} />
+                      </button>
+                    )
                   ))}
                 </div>
               </div>
@@ -957,35 +966,6 @@ const Portfolio = () => {
           </p>
         </div>
       </footer>
-
-      {/* Instagram QR Code Modal */}
-      <Dialog open={showInstagramQR} onOpenChange={setShowInstagramQR}>
-        <DialogContent className="bg-card-gradient border-border/50">
-          <DialogHeader>
-            <DialogTitle className="text-center text-foreground">Follow on Instagram</DialogTitle>
-          </DialogHeader>
-          <div className="flex flex-col items-center space-y-4 p-4">
-            <div className="w-64 h-64 bg-white rounded-lg flex items-center justify-center">
-              <img 
-                src={instagramQR}
-                alt="Instagram QR Code - @santhoshhhz.___" 
-                className="w-full h-full object-contain p-2"
-              />
-            </div>
-            <p className="text-muted-foreground text-sm text-center">
-              Scan this QR code to follow <span className="text-neon-pink font-semibold">@santhoshhhz.___</span> on Instagram
-            </p>
-            <a 
-              href="https://www.instagram.com/santhoshhhz.___?igsh=OHFhYWZwMnR2Z3Zz" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-6 py-2 bg-gradient-to-r from-neon-pink to-purple-500 text-white rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
-            >
-              Open Instagram
-            </a>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
