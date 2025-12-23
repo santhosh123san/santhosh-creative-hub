@@ -383,9 +383,9 @@ const Portfolio = () => {
             {/* Hero Image */}
             <div className="relative animate-scale-in lg:justify-self-end flex justify-center">
               <TiltCard className="w-80 h-80 lg:w-96 lg:h-96" glowColor="cyan" intensity={10}>
-                <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-neon-cyan/30 shadow-neon-cyan">
+                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-sky-400/60 shadow-[0_0_40px_rgba(56,189,248,0.4)]">
                   {/* Glowing border animation */}
-                  <div className="absolute inset-0 rounded-2xl border-2 border-neon-cyan animate-neon-pulse" />
+                  <div className="absolute inset-0 rounded-full border-4 border-sky-400 animate-neon-pulse" />
                   
                   <img 
                     src={santhoshHeroNew} 
@@ -394,7 +394,7 @@ const Portfolio = () => {
                   />
                   
                   {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent rounded-full" />
                 </div>
               </TiltCard>
               
