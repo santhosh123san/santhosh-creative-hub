@@ -111,67 +111,60 @@ const Portfolio = () => {
 
   const skills = [
     { 
-      category: 'Excel', 
-      percentage: 90, 
-      icon: Monitor,
+      category: 'Web Development', 
+      percentage: 70, 
+      icon: Code,
       color: 'cyan' as const,
-      skills: ['Data Cleaning', 'Pivot Tables', 'VLOOKUP', 'Formulas', 'Charts', 'Macros']
-    },
-    { 
-      category: 'Power BI', 
-      percentage: 40, 
-      icon: Palette,
-      color: 'purple' as const,
-      skills: ['Dashboards', 'Data Visualization', 'Reports', 'DAX Basics']
+      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Responsive Design']
     },
     { 
       category: 'Python', 
-      percentage: 60, 
+      percentage: 75, 
       icon: Code,
-      color: 'pink' as const,
-      skills: ['Pandas', 'NumPy', 'Data Analysis', 'Matplotlib', 'Jupyter Notebooks', 'Tkinter']
+      color: 'purple' as const,
+      skills: ['Pandas', 'NumPy', 'Tkinter', 'Matplotlib', 'Jupyter Notebooks', 'Automation']
     },
     { 
-      category: 'SQL', 
-      percentage: 40, 
+      category: 'Excel & Power BI', 
+      percentage: 85, 
+      icon: Monitor,
+      color: 'pink' as const,
+      skills: ['Data Cleaning', 'Pivot Tables', 'VLOOKUP', 'Dashboards', 'DAX', 'Visualizations']
+    },
+    { 
+      category: 'SQL & Database', 
+      percentage: 60, 
       icon: Database,
       color: 'green' as const,
-      skills: ['Queries', 'Joins', 'Data Extraction', 'Database Management']
-    },
-    { 
-      category: 'Web Development', 
-      percentage: 50, 
-      icon: Code,
-      color: 'cyan' as const,
-      skills: ['HTML', 'CSS', 'JavaScript']
+      skills: ['Queries', 'Joins', 'Database Design', 'MySQL', 'SQLite', 'Data Extraction']
     }
   ];
 
   const services = [
     {
+      title: 'Web Development',
+      description: 'Building responsive and dynamic web applications',
+      icon: Code,
+      color: 'cyan' as const,
+      features: ['Frontend Development', 'Backend Integration', 'Responsive Design', 'API Development']
+    },
+    {
       title: 'Data Analysis',
       description: 'Transform raw data into actionable insights',
       icon: Monitor,
-      color: 'cyan' as const,
+      color: 'purple' as const,
       features: ['Data Cleaning', 'Statistical Analysis', 'Trend Identification', 'Report Generation']
     },
     {
-      title: 'Data Visualization',
-      description: 'Create compelling visual stories from data',
-      icon: Palette,
-      color: 'purple' as const,
-      features: ['Charts & Graphs', 'Interactive Dashboards', 'Power BI Reports', 'Excel Visualizations']
-    },
-    {
-      title: 'Python Analytics',
-      description: 'Advanced data processing and analysis',
-      icon: Code,
+      title: 'Python Development',
+      description: 'Desktop apps and automation scripts',
+      icon: Binary,
       color: 'pink' as const,
-      features: ['Pandas DataFrames', 'Data Wrangling', 'Automated Scripts', 'Statistical Modeling']
+      features: ['GUI Applications', 'Data Processing', 'Automation Scripts', 'Analytics Tools']
     },
     {
       title: 'Database Management',
-      description: 'SQL queries and data extraction',
+      description: 'SQL queries and data architecture',
       icon: Database,
       color: 'green' as const,
       features: ['SQL Queries', 'Data Extraction', 'Database Design', 'Data Integration']
@@ -180,28 +173,12 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: 'Voice-Recognition Data Update System',
-      description: 'Innovative system that captures voice input data, cleans and processes it, and visualizes results with interactive charts.',
-      image: attendanceSoftware,
-      tech: ['Python', 'Speech Recognition', 'Data Visualization', 'Excel'],
-      category: 'Data Analytics',
-      color: 'purple' as const
-    },
-    {
-      title: 'Sales Data Analysis Dashboard',
-      description: 'Comprehensive sales analysis with trend identification, KPI tracking, and actionable business insights.',
+      title: 'Turf Booking System',
+      description: 'A full-stack web application for booking sports turfs with user authentication and payment integration.',
       image: posterDesigns,
-      tech: ['Excel', 'Power BI', 'Pivot Tables', 'Charts'],
-      category: 'Data Analytics',
+      tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MySQL'],
+      category: 'Web Development',
       color: 'cyan' as const
-    },
-    {
-      title: 'Customer Segmentation Analysis',
-      description: 'Python-based customer segmentation using data clustering techniques for targeted marketing insights.',
-      image: santhoshProfile,
-      tech: ['Python', 'Pandas', 'Matplotlib', 'Data Analysis'],
-      category: 'Data Analytics',
-      color: 'pink' as const
     },
     {
       title: 'Attendance Monitoring System',
@@ -209,6 +186,22 @@ const Portfolio = () => {
       image: attendanceSoftware,
       tech: ['Python', 'Tkinter', 'SQLite', 'GUI Development'],
       category: 'Desktop Application',
+      color: 'purple' as const
+    },
+    {
+      title: 'Voice-Recognition Data Update System',
+      description: 'Innovative system that captures voice input data, cleans and processes it, and visualizes results with interactive charts.',
+      image: attendanceSoftware,
+      tech: ['Python', 'Speech Recognition', 'Data Visualization', 'Excel'],
+      category: 'Data Analytics',
+      color: 'pink' as const
+    },
+    {
+      title: 'Sales Data Analysis Dashboard',
+      description: 'Comprehensive sales analysis with trend identification, KPI tracking, and actionable business insights.',
+      image: santhoshProfile,
+      tech: ['Excel', 'Power BI', 'Pivot Tables', 'Charts'],
+      category: 'Data Analytics',
       color: 'green' as const
     }
   ];
@@ -310,7 +303,7 @@ const Portfolio = () => {
               <div className="flex justify-center lg:justify-center">
                 <NeonBadge color="cyan" animated>
                   <div className="w-2 h-2 bg-neon-green rounded-full mr-2 animate-pulse" />
-                  Aspiring Data Analyst
+                  Full Stack Developer & Data Analyst
                 </NeonBadge>
               </div>
 
@@ -324,8 +317,11 @@ const Portfolio = () => {
                 </h1>
                 <div className="relative">
                   <h2 className="text-2xl lg:text-4xl font-medium text-foreground/80 leading-relaxed">
-                    Aspiring{' '}
                     <span className="text-neon-cyan text-neon-glow font-semibold">
+                      Full Stack Developer
+                    </span>{' '}
+                    &{' '}
+                    <span className="text-neon-purple text-neon-purple-glow font-semibold">
                       Data Analyst
                     </span>
                   </h2>
@@ -334,18 +330,19 @@ const Portfolio = () => {
 
               {/* Description */}
               <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed font-light max-w-xl mx-auto lg:mx-auto">
-                I am an IT student improving my data analytics skills to become a{' '}
-                <span className="text-neon-purple">Data Analyst</span> and later a{' '}
-                <span className="text-neon-pink">Data Scientist</span>.
+                I am an IT student passionate about{' '}
+                <span className="text-neon-cyan">Web Development</span> and{' '}
+                <span className="text-neon-purple">Data Analytics</span>, building solutions that combine both worlds.
               </p>
 
               {/* Tech Stack Pills */}
               <div className="flex flex-wrap gap-3 justify-center">
                 {[
-                  { name: 'Excel', color: 'cyan' as const },
-                  { name: 'Power BI', color: 'purple' as const },
-                  { name: 'Python', color: 'pink' as const },
-                  { name: 'SQL', color: 'green' as const }
+                  { name: 'HTML/CSS/JS', color: 'cyan' as const },
+                  { name: 'Python', color: 'purple' as const },
+                  { name: 'Excel', color: 'pink' as const },
+                  { name: 'SQL', color: 'green' as const },
+                  { name: 'Power BI', color: 'cyan' as const }
                 ].map((tech) => (
                   <NeonBadge key={tech.name} color={tech.color}>
                     {tech.name}
@@ -355,7 +352,7 @@ const Portfolio = () => {
 
               {/* Tagline */}
               <p className="text-lg text-muted-foreground italic">
-                "Passionate about turning data into insights."
+                "Building web solutions & turning data into insights."
               </p>
 
               {/* CTA Buttons */}
@@ -404,7 +401,7 @@ const Portfolio = () => {
                   
                   <img 
                     src={santhoshHeroNew} 
-                    alt="Santhosh T - Data Analyst" 
+                    alt="Santhosh T - Full Stack Developer & Data Analyst" 
                     className="w-full h-full object-cover"
                   />
                   
@@ -423,8 +420,8 @@ const Portfolio = () => {
               
               <div className="absolute -bottom-4 -right-4 glass rounded-xl p-3 border border-neon-purple/30 animate-float shadow-neon-purple" style={{ animationDelay: '2s' }}>
                 <div className="flex items-center gap-2 text-neon-purple">
-                  <Database size={16} />
-                  <span className="text-sm">Data Analyst</span>
+                  <Code size={16} />
+                  <span className="text-sm">Developer</span>
                 </div>
               </div>
             </div>
@@ -453,14 +450,14 @@ const Portfolio = () => {
                 Who is <span className="text-neon-cyan text-neon-glow">Santhosh</span>?
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm <span className="text-neon-purple">Santhosh T</span>, an IT student passionate about data analytics. I'm on a journey to become a <span className="text-neon-cyan">Data Analyst</span> and eventually a <span className="text-neon-pink">Data Scientist</span>.
+                I'm <span className="text-neon-purple">Santhosh T</span>, an IT student passionate about both <span className="text-neon-cyan">Web Development</span> and <span className="text-neon-pink">Data Analytics</span>. I build full-stack applications and transform data into meaningful insights.
               </p>
               
               <div className="grid md:grid-cols-3 gap-6">
                 {[
                   { title: 'Education', content: '3rd year B.Tech IT student at Mahendra Institute of Technology, graduating in 2027.', icon: Target, color: 'cyan' as const },
-                  { title: 'Experience', content: 'Internship at TechnoHacks Solutions Pvt. Ltd. - Focused on Excel basics & advanced skills.', icon: Zap, color: 'purple' as const },
-                  { title: 'Career Goal', content: 'Transitioning from Data Analyst to Data Scientist, leveraging data for business insights.', icon: Rocket, color: 'pink' as const },
+                  { title: 'Experience', content: 'Internship experience with focus on Excel, Python, and web development fundamentals.', icon: Zap, color: 'purple' as const },
+                  { title: 'Career Goal', content: 'Becoming a versatile Full Stack Developer with strong Data Analytics capabilities.', icon: Rocket, color: 'pink' as const },
                 ].map((item, index) => (
                   <TiltCard key={index} glowColor={item.color}>
                     <Card className="bg-card-gradient border-border/50 h-full">
@@ -646,7 +643,7 @@ const Portfolio = () => {
               Technical <span className="text-neon-cyan text-neon-glow">Proficiency</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive overview of my technical capabilities and expertise levels
+              A comprehensive overview of my web development and data analytics capabilities
             </p>
           </div>
           
@@ -705,10 +702,10 @@ const Portfolio = () => {
           <div className="text-center mb-16">
             <NeonBadge color="purple">Services</NeonBadge>
             <h2 className="text-4xl font-bold text-foreground mt-4 mb-4">
-              Areas of <span className="text-neon-purple text-neon-purple-glow">Proficiency</span>
+              Areas of <span className="text-neon-purple text-neon-purple-glow">Expertise</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Data analysis skills and tools I'm proficient in
+              Web development and data analysis skills I bring to the table
             </p>
           </div>
           
