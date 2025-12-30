@@ -129,7 +129,7 @@ const Portfolio = () => {
       percentage: 60, 
       icon: Code,
       color: 'pink' as const,
-      skills: ['Pandas', 'NumPy', 'Data Analysis', 'Matplotlib', 'Jupyter Notebooks']
+      skills: ['Pandas', 'NumPy', 'Data Analysis', 'Matplotlib', 'Jupyter Notebooks', 'Tkinter']
     },
     { 
       category: 'SQL', 
@@ -137,6 +137,13 @@ const Portfolio = () => {
       icon: Database,
       color: 'green' as const,
       skills: ['Queries', 'Joins', 'Data Extraction', 'Database Management']
+    },
+    { 
+      category: 'Web Development', 
+      percentage: 50, 
+      icon: Code,
+      color: 'cyan' as const,
+      skills: ['HTML', 'CSS', 'JavaScript']
     }
   ];
 
@@ -195,6 +202,14 @@ const Portfolio = () => {
       tech: ['Python', 'Pandas', 'Matplotlib', 'Data Analysis'],
       category: 'Data Analytics',
       color: 'pink' as const
+    },
+    {
+      title: 'Attendance Monitoring System',
+      description: 'A desktop application for tracking and managing attendance records with an intuitive GUI interface.',
+      image: attendanceSoftware,
+      tech: ['Python', 'Tkinter', 'SQLite', 'GUI Development'],
+      category: 'Desktop Application',
+      color: 'green' as const
     }
   ];
 
