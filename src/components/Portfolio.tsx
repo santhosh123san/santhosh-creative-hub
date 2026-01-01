@@ -297,7 +297,7 @@ const Portfolio = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[80vh]">
+          <div className="grid lg:grid-cols-2 gap-8 items-start min-h-[80vh] pt-8">
             <div className="text-foreground space-y-8 animate-fade-up lg:text-center lg:flex lg:flex-col lg:justify-center">
               {/* Status Badge */}
               <div className="flex justify-center lg:justify-center">
@@ -393,7 +393,7 @@ const Portfolio = () => {
             </div>
 
             {/* Hero Image */}
-            <div className="relative animate-scale-in lg:justify-self-end flex justify-center">
+            <div className="relative animate-scale-in lg:justify-self-end flex justify-center items-start lg:self-start lg:mt-0">
               <TiltCard className="w-80 h-80 lg:w-96 lg:h-96" glowColor="cyan" intensity={10}>
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-sky-400/60 shadow-[0_0_40px_rgba(56,189,248,0.4)]">
                   {/* Glowing border animation */}
