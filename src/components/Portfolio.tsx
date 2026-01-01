@@ -329,7 +329,7 @@ const Portfolio = () => {
               </div>
 
               {/* Description */}
-              <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed font-light max-w-xl mx-auto lg:mx-auto">
+              <p className="text-xl lg:text-2xl text-white leading-relaxed font-light max-w-xl mx-auto lg:mx-auto">
                 I am an IT student passionate about{' '}
                 <span className="text-neon-cyan">Web Development</span> and{' '}
                 <span className="text-neon-purple">Data Analytics</span>, building solutions that combine both worlds.
@@ -351,7 +351,7 @@ const Portfolio = () => {
               </div>
 
               {/* Tagline */}
-              <p className="text-lg text-muted-foreground italic">
+              <p className="text-lg text-white italic">
                 "Building web solutions & turning data into insights."
               </p>
 
