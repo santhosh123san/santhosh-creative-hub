@@ -43,10 +43,15 @@ import {
   Award,
   BookOpen
 } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import santhoshProfile from '@/assets/santhosh-profile.jpg';
 import santhoshHeroNew from '@/assets/santhosh-hero-new.jpg';
-import attendanceSoftware from '@/assets/attendance-monitoring-new.jpg';
-import posterDesigns from '@/assets/poster-designs-new.jpg';
+import projectDarkPattern from '@/assets/project-dark-pattern.jpg';
+import projectTruthTracker from '@/assets/project-truth-tracker.jpg';
+import projectCareerCompass from '@/assets/project-career-compass.jpg';
+import projectHealthcare from '@/assets/project-healthcare.jpg';
+import projectPowerBI from '@/assets/project-powerbi.jpg';
+
 
 const Portfolio = () => {
   const { toast } = useToast();
@@ -108,6 +113,8 @@ const Portfolio = () => {
     }
   };
   const [showAllProjects, setShowAllProjects] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+
 
   const skills = [
     { 
