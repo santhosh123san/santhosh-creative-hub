@@ -783,18 +783,24 @@ const Portfolio = () => {
               Featured <span className="text-neon-cyan text-neon-glow">Projects</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Showcasing my completed projects and professional work
+              Click any project to read the full details and open it on GitHub
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(showAllProjects ? projects : projects.slice(0, 3)).map((project, index) => (
               <TiltCard key={index} glowColor={project.color}>
-                <Card className="bg-card-gradient border-border/50 overflow-hidden group h-full">
+                <Card
+                  onClick={() => setSelectedProject(project)}
+                  className="bg-card-gradient border-border/50 overflow-hidden group h-full cursor-pointer"
+                >
                   <div className="relative overflow-hidden">
                     <img 
                       src={project.image} 
                       alt={project.title}
+                      loading="lazy"
+                      width={1024}
+                      height={640}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
@@ -804,13 +810,12 @@ const Portfolio = () => {
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold text-foreground mb-3">{project.title}</h3>
-                    <p className="text-muted-foreground mb-4 text-sm line-clamp-2">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.slice(0, 3).map((tech, techIndex) => (
+                      {project.tech.map((tech, techIndex) => (
                         <Badge 
                           key={techIndex} 
                           variant="secondary" 
-                          className={`bg-neon-${project.color}/10 text-neon-${project.color} border border-neon-${project.color}/20 text-xs`}
+                          className="bg-muted/50 text-foreground/80 border border-border/50 text-xs"
                         >
                           {tech}
                         </Badge>
@@ -840,6 +845,55 @@ const Portfolio = () => {
           )}
         </div>
       </section>
+
+      {/* Project Details Dialog */}
+      <Dialog open={!!selectedProject} onOpenChange={(open) => !open && setSelectedProject(null)}>
+        <DialogContent className="max-w-2xl bg-card border-border max-h-[90vh] overflow-y-auto">
+          {selectedProject && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl text-foreground">{selectedProject.title}</DialogTitle>
+                <DialogDescription className="text-muted-foreground">
+                  {selectedProject.category}
+                </DialogDescription>
+              </DialogHeader>
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                loading="lazy"
+                width={1024}
+                height={640}
+                className="w-full h-56 object-cover rounded-lg border border-border/50"
+              />
+              <div className="flex flex-wrap gap-2">
+                {selectedProject.tech.map((tech, i) => (
+                  <Badge key={i} variant="secondary" className="bg-muted/50 text-foreground/80 border border-border/50 text-xs">
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+              <p className="text-muted-foreground leading-relaxed">{selectedProject.description}</p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                {selectedProject.links.map((link) => (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
+                    <GlowButton variant="outline" glowColor={selectedProject.color} className="w-full">
+                      <Github size={16} />
+                      {link.label}
+                    </GlowButton>
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-background relative overflow-hidden">
