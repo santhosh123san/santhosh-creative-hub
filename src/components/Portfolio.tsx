@@ -214,7 +214,7 @@ const Portfolio = () => {
       image: projectPowerBI,
       tech: ['Power BI', 'DAX', 'Power Query'],
       category: 'Data Analytics',
-      color: 'orange' as const,
+      color: 'cyan' as const,
       links: [
         { label: 'HR Analysis Dashboard', url: 'https://github.com/santhosh123san/HR-Analysis-Dashboard' },
         { label: 'Netflix Analysis Dashboard', url: 'https://github.com/santhosh123san/Netflix-Analysis-Dashboard' }
