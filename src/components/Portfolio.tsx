@@ -20,7 +20,6 @@ import {
   MapPin, 
   Github, 
   Linkedin, 
-  Instagram,
   ExternalLink,
   Download,
   Menu,
