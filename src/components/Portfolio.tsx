@@ -43,10 +43,15 @@ import {
   Award,
   BookOpen
 } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import santhoshProfile from '@/assets/santhosh-profile.jpg';
 import santhoshHeroNew from '@/assets/santhosh-hero-new.jpg';
-import attendanceSoftware from '@/assets/attendance-monitoring-new.jpg';
-import posterDesigns from '@/assets/poster-designs-new.jpg';
+import projectDarkPattern from '@/assets/project-dark-pattern.jpg';
+import projectTruthTracker from '@/assets/project-truth-tracker.jpg';
+import projectCareerCompass from '@/assets/project-career-compass.jpg';
+import projectHealthcare from '@/assets/project-healthcare.jpg';
+import projectPowerBI from '@/assets/project-powerbi.jpg';
+
 
 const Portfolio = () => {
   const { toast } = useToast();
@@ -108,6 +113,8 @@ const Portfolio = () => {
     }
   };
   const [showAllProjects, setShowAllProjects] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+
 
   const skills = [
     { 
@@ -173,38 +180,57 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: 'Turf Booking System',
-      description: 'A full-stack web application for booking sports turfs with user authentication and payment integration.',
-      image: posterDesigns,
-      tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MySQL'],
-      category: 'Web Development',
-      color: 'cyan' as const
-    },
-    {
-      title: 'Attendance Monitoring System',
-      description: 'A desktop application for tracking and managing attendance records with an intuitive GUI interface.',
-      image: attendanceSoftware,
-      tech: ['Python', 'Tkinter', 'SQLite', 'GUI Development'],
-      category: 'Desktop Application',
-      color: 'purple' as const
-    },
-    {
-      title: 'Voice-Recognition Data Update System',
-      description: 'Innovative system that captures voice input data, cleans and processes it, and visualizes results with interactive charts.',
-      image: attendanceSoftware,
-      tech: ['Python', 'Speech Recognition', 'Data Visualization', 'Excel'],
+      title: 'Dark Pattern Impact Analytics & Trust Score System',
+      description: 'Analyzed dark pattern usage across major e-commerce and service apps (Amazon, Flipkart, Meesho, PhonePe, Zomato, Swiggy) to compute trust scores and classify risk levels.',
+      image: projectDarkPattern,
+      tech: ['PostgreSQL', 'SQL', 'Power BI'],
       category: 'Data Analytics',
-      color: 'pink' as const
+      color: 'pink' as const,
+      links: [{ label: 'View on GitHub', url: 'https://github.com/santhosh123san/dark-pattern-impact-analytics' }]
     },
     {
-      title: 'Sales Data Analysis Dashboard',
-      description: 'Comprehensive sales analysis with trend identification, KPI tracking, and actionable business insights.',
-      image: santhoshProfile,
-      tech: ['Excel', 'Power BI', 'Pivot Tables', 'Charts'],
+      title: 'Truth Tracker – AI Fake News Detection Platform',
+      description: 'Developed a full-stack platform aggregating live news across Indian states/districts, applying NLP and ML models to classify authenticity with confidence scoring.',
+      image: projectTruthTracker,
+      tech: ['React', 'Spring Boot/Node.js', 'Python', 'ML'],
+      category: 'Full Stack + ML',
+      color: 'purple' as const,
+      links: [{ label: 'View on GitHub', url: 'https://github.com/santhosh123san/news-tracker1' }]
+    },
+    {
+      title: 'Career Compass – AI Resume Analyzer',
+      description: 'Built an AI-powered resume analysis tool generating ATS scores, skill-gap analysis, and personalized job/salary recommendations using NLP-based parsing.',
+      image: projectCareerCompass,
+      tech: ['Python', 'NLP', 'Machine Learning'],
+      category: 'AI / ML',
+      color: 'cyan' as const,
+      links: [{ label: 'View on GitHub', url: 'https://github.com/santhosh123san/career-compass' }]
+    },
+    {
+      title: 'Smart Healthcare Management & Analytics Platform',
+      description: 'Built a healthcare management platform with REST APIs for patient data management, database integration, validation, and layered backend architecture.',
+      image: projectHealthcare,
+      tech: ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'React', 'Power BI'],
+      category: 'Full Stack',
+      color: 'green' as const,
+      links: [{ label: 'View on GitHub', url: 'https://github.com/santhosh123san/smart-healthcare-management-analytics-platform' }]
+    },
+    {
+      title: 'Power BI Data Analytics Projects',
+      description: 'Developed multiple end-to-end Power BI dashboards, performing data cleaning and DAX-based analysis.',
+      image: projectPowerBI,
+      tech: ['Power BI', 'DAX', 'Power Query'],
       category: 'Data Analytics',
-      color: 'green' as const
+      color: 'cyan' as const,
+      links: [
+        { label: 'HR Analysis Dashboard', url: 'https://github.com/santhosh123san/HR-Analysis-Dashboard' },
+        { label: 'Netflix Analysis Dashboard', url: 'https://github.com/santhosh123san/Netflix-Analysis-Dashboard' }
+      ]
     }
   ];
+
+  type Project = (typeof projects)[number];
+
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -783,18 +809,24 @@ const Portfolio = () => {
               Featured <span className="text-neon-cyan text-neon-glow">Projects</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Showcasing my completed projects and professional work
+              Click any project to read the full details and open it on GitHub
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(showAllProjects ? projects : projects.slice(0, 3)).map((project, index) => (
               <TiltCard key={index} glowColor={project.color}>
-                <Card className="bg-card-gradient border-border/50 overflow-hidden group h-full">
+                <Card
+                  onClick={() => setSelectedProject(project)}
+                  className="bg-card-gradient border-border/50 overflow-hidden group h-full cursor-pointer"
+                >
                   <div className="relative overflow-hidden">
                     <img 
                       src={project.image} 
                       alt={project.title}
+                      loading="lazy"
+                      width={1024}
+                      height={640}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
@@ -804,13 +836,12 @@ const Portfolio = () => {
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold text-foreground mb-3">{project.title}</h3>
-                    <p className="text-muted-foreground mb-4 text-sm line-clamp-2">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.slice(0, 3).map((tech, techIndex) => (
+                      {project.tech.map((tech, techIndex) => (
                         <Badge 
                           key={techIndex} 
                           variant="secondary" 
-                          className={`bg-neon-${project.color}/10 text-neon-${project.color} border border-neon-${project.color}/20 text-xs`}
+                          className="bg-muted/50 text-foreground/80 border border-border/50 text-xs"
                         >
                           {tech}
                         </Badge>
@@ -840,6 +871,55 @@ const Portfolio = () => {
           )}
         </div>
       </section>
+
+      {/* Project Details Dialog */}
+      <Dialog open={!!selectedProject} onOpenChange={(open) => !open && setSelectedProject(null)}>
+        <DialogContent className="max-w-2xl bg-card border-border max-h-[90vh] overflow-y-auto">
+          {selectedProject && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl text-foreground">{selectedProject.title}</DialogTitle>
+                <DialogDescription className="text-muted-foreground">
+                  {selectedProject.category}
+                </DialogDescription>
+              </DialogHeader>
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                loading="lazy"
+                width={1024}
+                height={640}
+                className="w-full h-56 object-cover rounded-lg border border-border/50"
+              />
+              <div className="flex flex-wrap gap-2">
+                {selectedProject.tech.map((tech, i) => (
+                  <Badge key={i} variant="secondary" className="bg-muted/50 text-foreground/80 border border-border/50 text-xs">
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+              <p className="text-muted-foreground leading-relaxed">{selectedProject.description}</p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                {selectedProject.links.map((link) => (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
+                    <GlowButton variant="outline" glowColor={selectedProject.color} className="w-full">
+                      <Github size={16} />
+                      {link.label}
+                    </GlowButton>
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-background relative overflow-hidden">
