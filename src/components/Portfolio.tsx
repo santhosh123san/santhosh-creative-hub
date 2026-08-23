@@ -119,28 +119,28 @@ const Portfolio = () => {
   const skills = [
     { 
       category: 'Web Development', 
-      percentage: 70, 
+      percentage: 80, 
       icon: Code,
       color: 'cyan' as const,
       skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Responsive Design']
     },
     { 
       category: 'Python', 
-      percentage: 75, 
+      percentage: 85, 
       icon: Code,
       color: 'purple' as const,
       skills: ['Pandas', 'NumPy', 'Tkinter', 'Matplotlib', 'Jupyter Notebooks', 'Automation']
     },
     { 
       category: 'Excel & Power BI', 
-      percentage: 85, 
+      percentage: 95, 
       icon: Monitor,
       color: 'pink' as const,
       skills: ['Data Cleaning', 'Pivot Tables', 'VLOOKUP', 'Dashboards', 'DAX', 'Visualizations']
     },
     { 
       category: 'SQL & Database', 
-      percentage: 60, 
+      percentage: 90, 
       icon: Database,
       color: 'green' as const,
       skills: ['Queries', 'Joins', 'Database Design', 'MySQL', 'SQLite', 'Data Extraction']
@@ -967,8 +967,8 @@ const Portfolio = () => {
                 <div className="flex gap-4">
                   {[
                     { icon: Github, href: 'https://github.com/santhosh123san', color: 'cyan' as const, external: true },
-                    { icon: Linkedin, href: 'https://linkedin.com/in/santhosh-t-6325412a3', color: 'purple' as const, external: true },
-                    { icon: Instagram, href: '/instagram', color: 'pink' as const, external: false },
+                    { icon: Linkedin, href: 'https://www.linkedin.com/in/santhosh-t-6325412a3/', color: 'purple' as const, external: true },
+                    { icon: Mail, href: 'mailto:santhosh25995@gmail.com', color: 'pink' as const, external: true },
                   ].map((social, index) => (
                     social.external ? (
                       <a
