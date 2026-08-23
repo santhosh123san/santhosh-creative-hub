@@ -173,38 +173,57 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: 'Turf Booking System',
-      description: 'A full-stack web application for booking sports turfs with user authentication and payment integration.',
-      image: posterDesigns,
-      tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MySQL'],
-      category: 'Web Development',
-      color: 'cyan' as const
-    },
-    {
-      title: 'Attendance Monitoring System',
-      description: 'A desktop application for tracking and managing attendance records with an intuitive GUI interface.',
-      image: attendanceSoftware,
-      tech: ['Python', 'Tkinter', 'SQLite', 'GUI Development'],
-      category: 'Desktop Application',
-      color: 'purple' as const
-    },
-    {
-      title: 'Voice-Recognition Data Update System',
-      description: 'Innovative system that captures voice input data, cleans and processes it, and visualizes results with interactive charts.',
-      image: attendanceSoftware,
-      tech: ['Python', 'Speech Recognition', 'Data Visualization', 'Excel'],
+      title: 'Dark Pattern Impact Analytics & Trust Score System',
+      description: 'Analyzed dark pattern usage across major e-commerce and service apps (Amazon, Flipkart, Meesho, PhonePe, Zomato, Swiggy) to compute trust scores and classify risk levels.',
+      image: projectDarkPattern,
+      tech: ['PostgreSQL', 'SQL', 'Power BI'],
       category: 'Data Analytics',
-      color: 'pink' as const
+      color: 'pink' as const,
+      links: [{ label: 'View on GitHub', url: 'https://github.com/santhosh123san/dark-pattern-impact-analytics' }]
     },
     {
-      title: 'Sales Data Analysis Dashboard',
-      description: 'Comprehensive sales analysis with trend identification, KPI tracking, and actionable business insights.',
-      image: santhoshProfile,
-      tech: ['Excel', 'Power BI', 'Pivot Tables', 'Charts'],
+      title: 'Truth Tracker – AI Fake News Detection Platform',
+      description: 'Developed a full-stack platform aggregating live news across Indian states/districts, applying NLP and ML models to classify authenticity with confidence scoring.',
+      image: projectTruthTracker,
+      tech: ['React', 'Spring Boot/Node.js', 'Python', 'ML'],
+      category: 'Full Stack + ML',
+      color: 'purple' as const,
+      links: [{ label: 'View on GitHub', url: 'https://github.com/santhosh123san/news-tracker1' }]
+    },
+    {
+      title: 'Career Compass – AI Resume Analyzer',
+      description: 'Built an AI-powered resume analysis tool generating ATS scores, skill-gap analysis, and personalized job/salary recommendations using NLP-based parsing.',
+      image: projectCareerCompass,
+      tech: ['Python', 'NLP', 'Machine Learning'],
+      category: 'AI / ML',
+      color: 'cyan' as const,
+      links: [{ label: 'View on GitHub', url: 'https://github.com/santhosh123san/career-compass' }]
+    },
+    {
+      title: 'Smart Healthcare Management & Analytics Platform',
+      description: 'Built a healthcare management platform with REST APIs for patient data management, database integration, validation, and layered backend architecture.',
+      image: projectHealthcare,
+      tech: ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'React', 'Power BI'],
+      category: 'Full Stack',
+      color: 'green' as const,
+      links: [{ label: 'View on GitHub', url: 'https://github.com/santhosh123san/smart-healthcare-management-analytics-platform' }]
+    },
+    {
+      title: 'Power BI Data Analytics Projects',
+      description: 'Developed multiple end-to-end Power BI dashboards, performing data cleaning and DAX-based analysis.',
+      image: projectPowerBI,
+      tech: ['Power BI', 'DAX', 'Power Query'],
       category: 'Data Analytics',
-      color: 'green' as const
+      color: 'orange' as const,
+      links: [
+        { label: 'HR Analysis Dashboard', url: 'https://github.com/santhosh123san/HR-Analysis-Dashboard' },
+        { label: 'Netflix Analysis Dashboard', url: 'https://github.com/santhosh123san/Netflix-Analysis-Dashboard' }
+      ]
     }
   ];
+
+  type Project = (typeof projects)[number];
+
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
