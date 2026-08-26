@@ -509,6 +509,93 @@ const Portfolio = () => {
                 Download Resume
                 <ChevronRight size={18} />
               </GlowButton>
+
+              <GlowButton
+                variant="outline"
+                size="lg"
+                glowColor="purple"
+                onClick={() => document.getElementById('internships')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Award size={18} />
+                View My Internships
+                <ChevronRight size={18} />
+              </GlowButton>
+            </div>
+
+            {/* Internships */}
+            <div id="internships" className="mt-16 space-y-8 animate-fade-up text-center">
+              <NeonBadge color="pink">Internships</NeonBadge>
+              <h3 className="text-3xl font-bold text-foreground">
+                Industry <span className="text-neon-pink">Experience</span>
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6 text-left">
+                {[
+                  {
+                    company: 'TechnoHacks Solutions Pvt. Ltd.',
+                    link: 'https://share.google/CMKjpak45RUuhA7mx',
+                    role: 'Data Analyst Intern',
+                    period: '1 Month',
+                    certificate: technohacksCertificate.url,
+                  },
+                  {
+                    company: 'Decodes Lab',
+                    link: 'https://share.google/5qMMYAVqq77XZXmLM',
+                    role: 'Data Analyst Intern',
+                    period: '1 Month',
+                    certificate: null,
+                  },
+                ].map((intern, index) => (
+                  <TiltCard key={index} glowColor={index === 0 ? 'pink' : 'purple'}>
+                    <Card className="bg-card-gradient border-border/50 h-full">
+                      <CardContent className="p-6 space-y-4">
+                        <div className="flex items-center gap-3">
+                          <div className={`w-12 h-12 rounded-lg ${index === 0 ? 'bg-neon-pink/10' : 'bg-neon-purple/10'} flex items-center justify-center`}>
+                            <Award className={index === 0 ? 'text-neon-pink' : 'text-neon-purple'} size={24} />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-lg text-foreground">{intern.company}</h4>
+                            <p className="text-sm text-neon-cyan">{intern.role}</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <Calendar size={14} />
+                          <span>Duration: {intern.period}</span>
+                        </div>
+                        <p className="text-muted-foreground text-sm">
+                          Worked on several projects assigned by the industry, gaining hands-on experience in real-world data analytics.
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                          <GlowButton
+                            variant="secondary"
+                            size="sm"
+                            glowColor={index === 0 ? 'pink' : 'purple'}
+                            onClick={() => window.open(intern.link, '_blank')}
+                          >
+                            <ExternalLink size={14} />
+                            View Company
+                          </GlowButton>
+                          {intern.certificate ? (
+                            <GlowButton
+                              variant="outline"
+                              size="sm"
+                              glowColor="cyan"
+                              onClick={() => window.open(intern.certificate!, '_blank')}
+                            >
+                              <Award size={14} />
+                              View Certificate
+                            </GlowButton>
+                          ) : (
+                            <GlowButton variant="outline" size="sm" glowColor="cyan" disabled>
+                              <Award size={14} />
+                              Certificate Coming Soon
+                            </GlowButton>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TiltCard>
+                ))}
+              </div>
             </div>
           </div>
         </div>
