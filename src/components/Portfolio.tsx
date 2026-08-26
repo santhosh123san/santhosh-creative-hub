@@ -44,7 +44,8 @@ import {
 } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import santhoshProfile from '@/assets/santhosh-profile.jpg';
-import santhoshHeroNew from '@/assets/santhosh-hero-new.jpg';
+import santhoshHeadshot from '@/assets/santhosh-headshot.jpg.asset.json';
+import technohacksCertificate from '@/assets/technohacks-certificate.jpg.asset.json';
 import projectDarkPattern from '@/assets/project-dark-pattern.jpg';
 import projectTruthTracker from '@/assets/project-truth-tracker.jpg';
 import projectCareerCompass from '@/assets/project-career-compass.jpg';
@@ -425,7 +426,7 @@ const Portfolio = () => {
                   <div className="absolute inset-0 rounded-full border-4 border-sky-400 animate-neon-pulse" />
                   
                   <img 
-                    src={santhoshHeroNew} 
+                    src={santhoshHeadshot.url} 
                     alt="Santhosh T - Full Stack Developer & Data Analyst" 
                     className="w-full h-full object-cover"
                   />
