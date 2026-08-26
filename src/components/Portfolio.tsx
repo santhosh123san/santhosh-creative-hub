@@ -444,12 +444,6 @@ const Portfolio = () => {
                 </div>
               </div>
               
-              <div className="absolute -bottom-4 -right-4 glass rounded-xl p-3 border border-neon-purple/30 animate-float shadow-neon-purple" style={{ animationDelay: '2s' }}>
-                <div className="flex items-center gap-2 text-neon-purple">
-                  <Code size={16} />
-                  <span className="text-sm">Developer</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
