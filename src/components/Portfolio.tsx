@@ -44,8 +44,8 @@ import {
 } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import santhoshProfile from '@/assets/santhosh-profile.jpg';
-import santhoshHeadshot from '@/assets/santhosh-headshot.jpg.asset.json';
-import technohacksCertificate from '@/assets/technohacks-certificate.jpg.asset.json';
+const santhoshHeadshot = { url: '/santhosh-headshot.jpg' };
+const technohacksCertificate = { url: '/technohacks-certificate.jpg' };
 import projectDarkPattern from '@/assets/project-dark-pattern.jpg';
 import projectTruthTracker from '@/assets/project-truth-tracker.jpg';
 import projectCareerCompass from '@/assets/project-career-compass.jpg';
